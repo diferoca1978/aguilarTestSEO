@@ -73,17 +73,17 @@
 --color-deepdark-900: #3d3d3d;
 --color-deepdark-950: #202020;
 
---color-darkGray-50: #f6f6f6;
---color-darkGray-100: #e7e7e7;
---color-darkGray-200: #d1d1d1;
---color-darkGray-300: #b0b0b0;
---color-darkGray-400: #888888;
---color-darkGray-500: #6d6d6d;
---color-darkGray-600: #5d5d5d;
---color-darkGray-700: #4f4f4f;
---color-darkGray-800: #444444;
---color-darkGray-900: #3d3d3d;
---color-darkGray-950: #262626;
+--color-quill-gray-50: #f7f7f5;
+--color-quill-gray-100: #ebebe9;
+--color-quill-gray-200: #d1d0cb;
+--color-quill-gray-300: #bdbcb4;
+--color-quill-gray-400: #a19e96;
+--color-quill-gray-500: #8f8a80;
+--color-quill-gray-600: #827d74;
+--color-quill-gray-700: #6d6961;
+--color-quill-gray-800: #5a5652;
+--color-quill-gray-900: #4a4744;
+--color-quill-gray-950: #272523;
 
 --color-softWhite-50: #fefefe;
 --color-softWhite-100: #efefef;
