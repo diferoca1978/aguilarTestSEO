@@ -1,0 +1,142 @@
+---
+import LogoSvg from "@/assets/images/logo.svg";
+---
+
+<!-- Logo -->
+<header
+  class="sticky top-0 inset-x-0 flex flex-wrap md:flex-nonwrap z-50 w-full backdrop-blur-3xl main-header"
+>
+  <nav class="w-full h-[200px] mx-auto md:max-w-7xl nav-bar">
+    <div class="flex justify-between items-center px-5">
+      <!-- Logo -->
+      <div>
+        <a href="/">
+          <LogoSvg width={250} height={200} />
+          <span class="sr-only">Logo</span>
+        </a>
+      </div>
+      <!-- Mobile menu button -->
+      <div>
+        <button
+          type="button"
+          class="relative items-center justify-center p-2 focus:outline-0 md:hidden open-mobile-menu"
+        >
+          <span class="sr-only">Open mobile menu</span>
+          <!-- Open icon -->
+          <svg
+            class="block text-gray-700 hover:text-gray-900"
+            id="open-icon"
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            ><g
+              fill="none"
+              stroke="currentColor"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              ><path d="M20 5h-13"></path><path d="M20 10h-10"></path><path
+                d="M20 15h-16"></path><path d="M20 20h-13"></path></g
+            ></svg
+          >
+
+          <!-- Close icon -->
+
+          <svg
+            class="hidden text-gray-700 hover:text-gray-900"
+            id="close-icon"
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            ><g
+              fill="none"
+              stroke="currentColor"
+              stroke-dasharray="16"
+              stroke-dashoffset="16"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              ><path d="M7 7l10 10" stroke-dashoffset="0"></path><path
+                d="M17 7l-10 10"
+                stroke-dashoffset="0"></path></g
+            ></svg
+          >
+        </button>
+      </div>
+      <!-- Desktop menu -->
+      <div class="hidden md:block">
+        <div class="flex space-x-4 items-center">
+          <a id="link" href="/aboutUs" class="text-deepdark-900"
+            >¿Quiénes <span>Somos?</span></a
+          >
+          <a id="link" href="/services" class="text-deepdark-900">Servicios</a>
+          <a id="link" href="/successCases" class="text-deepdark-900"
+            >Casos de <span>Éxito</span></a
+          >
+          <a id="link" href="/blog" class="text-deepdark-900">Blog</a>
+          <button
+            type="button"
+            class="text-deepdark-900 border border-darkGray-200 rounded-lg px-4 py-1 hover:bg-gold-400 hover:text-softWhite-50 hover:border-softWhite-50 transition duration-300"
+          >
+            <a id="link" href="/contact">Contacto</a></button
+          >
+        </div>
+      </div>
+    </div>
+    <!-- Mobile menu -->
+    <div class="mobile-menu md:hidden">
+      <div class="flex flex-col items-end pr-7 space-y-4 bg-orangelight">
+        <a id="link" href="/aboutUs" class="text-deepdark-900"
+          >¿Quiénes <span>Somos?</span></a
+        >
+        <a id="link" href="/services" class="text-deepdark-900">Servicios</a>
+        <a id="link" href="/successCases" class="text-deepdark-900"
+          >Casos de <span>Éxito</span></a
+        >
+        <a id="link" href="/blog" class="text-deepdark-900">Blog</a>
+        <a id="link" href="/contact" class="text-deepdark-900">Contacto</a>
+      </div>
+    </div>
+  </nav>
+</header>
+
+<style>
+  .mobile-menu {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s ease-out;
+  }
+  .mobile-menu.open {
+    max-height: 1000px;
+    transition: max-height 0.8s ease-in;
+  }
+</style>
+
+<script>
+  const btn = document.querySelector(
+    "button.open-mobile-menu"
+  ) as HTMLButtonElement;
+  const menu = document.querySelector(".mobile-menu") as HTMLDivElement;
+  const openIcon = document.querySelector("#open-icon") as HTMLElement;
+  const closeIcon = document.querySelector("#close-icon") as HTMLElement;
+
+  const currentPath = window.location.pathname;
+  console.log("Current Path:", currentPath);
+
+  const links = document.querySelectorAll("#link");
+  links.forEach((link) => {
+    if (link.getAttribute("href") === currentPath) {
+      link.classList.add("text-gold-500");
+    } else {
+      link.classList.remove("text-gold-500");
+    }
+  });
+
+  btn.addEventListener("click", () => {
+    menu.classList.toggle("open");
+    openIcon.classList.toggle("hidden");
+    closeIcon.classList.toggle("hidden");
+  });
+</script>

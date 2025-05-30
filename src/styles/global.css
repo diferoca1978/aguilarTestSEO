@@ -29,12 +29,15 @@
   }
   p {
     font-family: var(--font-roboto);
+    font-size: var(--text-lg);
   }
   a {
     font-family: var(--font-roboto);
+    font-size: var(--text-lg);
   }
   span {
     font-family: var(--font-roboto);
+    font-size: var(--text-lg);
   }
 }
 
@@ -93,6 +96,10 @@
 --color-softWhite-800: #464646;
 --color-softWhite-900: #3d3d3d;
 --color-softWhite-950: #292929;
+
+/* Brakepoint */
+
+--breakpoint-md: 832px
 
 }
 
