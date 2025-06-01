@@ -4,14 +4,14 @@ import LogoSvg from "@/assets/images/logo.svg";
 
 <!-- Logo -->
 <header
-  class="sticky top-0 inset-x-0 flex flex-wrap md:flex-nonwrap z-50 w-full backdrop-blur-3xl main-header"
+  class="fixed top-0 left-0 right-0 bg-softWhite-50 z-50 w-full flex flex-wrap md:flex-nonwrap main-header"
 >
-  <nav class="w-full h-[200px] mx-auto md:max-w-7xl nav-bar">
+  <nav class="w-full h-[150px] mx-auto md:max-w-7xl nav-bar">
     <div class="flex justify-between items-center px-5">
       <!-- Logo -->
       <div>
         <a href="/">
-          <LogoSvg width={250} height={200} />
+          <LogoSvg width={250} height={170} />
           <span class="sr-only">Logo</span>
         </a>
       </div>
@@ -86,17 +86,19 @@ import LogoSvg from "@/assets/images/logo.svg";
       </div>
     </div>
     <!-- Mobile menu -->
-    <div class="mobile-menu md:hidden">
-      <div class="flex flex-col items-end pr-7 space-y-4 bg-orangelight">
-        <a id="link" href="/aboutUs" class="text-deepdark-900"
+    <div
+      class="mobile-menu md:hidden absolute top-full backdrop-blur-md w-full"
+    >
+      <div class="flex flex-col items-end pr-7 space-y-4 py-2">
+        <a id="link" href="/aboutUs" class="text-softWhite-50"
           >¿Quiénes <span>Somos?</span></a
         >
-        <a id="link" href="/services" class="text-deepdark-900">Servicios</a>
-        <a id="link" href="/successCases" class="text-deepdark-900"
+        <a id="link" href="/services" class="text-softWhite-50">Servicios</a>
+        <a id="link" href="/successCases" class="text-softWhite-50"
           >Casos de <span>Éxito</span></a
         >
-        <a id="link" href="/blog" class="text-deepdark-900">Blog</a>
-        <a id="link" href="/contact" class="text-deepdark-900">Contacto</a>
+        <a id="link" href="/blog" class="text-softWhite-50">Blog</a>
+        <a id="link" href="/contact" class="text-softWhite-50">Contacto</a>
       </div>
     </div>
   </nav>
@@ -116,7 +118,7 @@ import LogoSvg from "@/assets/images/logo.svg";
 
 <script>
   const btn = document.querySelector(
-    "button.open-mobile-menu"
+    "button.open-mobile-menu",
   ) as HTMLButtonElement;
   const menu = document.querySelector(".mobile-menu") as HTMLDivElement;
   const openIcon = document.querySelector("#open-icon") as HTMLElement;

@@ -1,11 +1,54 @@
 ---
-
+import { Image } from "astro:assets";
+import heroImage from "../../../assets/images/herooption1.webp";
 ---
 
-<section>
-  <div>
-    <h1 class="text-[min(10vw,64px)] text-gold-500 text-center bg-darkGray-400 font-extrabold hover:text-gold-400">Welcome to Our Website</h1>
-    <p>Your journey to excellence starts here.</p>
-    
+<section class="relative h-screen pt-[180px]">
+  <!-- 1. Imagen de fondo cubriendo todo el hero -->
+  <Image
+    src={heroImage}
+    alt="Fondo Hero Aguilar & Abogados"
+    class="absolute inset-0 w-full h-full object-cover"
+  />
+
+  <!-- 2. Overlay semitransparente para contraste -->
+  <div class="absolute inset-0 bg-deepdark-950/50"></div>
+
+  <!-- 3. Contenedor de texto y CTA centrado -->
+  <div
+    class="relative z-10 flex flex-col items-center justify-center text-center px-4 md:px-6 lg:px-8 h-full"
+  >
+    <!-- Título principal -->
+    <h1
+      class="text-[min(10vw,64px)] font-bold text-softWhite-50 mb-4 leading-tight tracking-tight"
+    >
+      Tu tranquilidad
+    </h1>
+    <h1
+      class="text-[min(10vw,64px)] font-bold text-softWhite-50 mb-4 leading-tight tracking-tight"
+    >
+      es nuestra causa
+    </h1>
+
+    <!-- Subtítulo (dos líneas) -->
+    <p class="text-[min(4vw, 20px)] text-softWhite-50 mb-6 max-w-2xl">
+      Somos abogados especializados en seguros, <span
+        >defenderemos tus derechos frente a la aseguradora.</span
+      >
+    </p>
+
+    <!-- Botón CTA en color dorado de la marca -->
+    <a
+      href="/contact"
+      class="bg-gradient-to-r from-gold-400 to-gold-500
+      hover:from-gold-500
+      hover:to-gold-400 focus:outline-1
+        px-4 py-2 rounded-xl
+      text-softWhite-50 font-semibold text-lg
+        shadow-md transition duration-400 ease-in-out
+         transform hover:scale-105"
+    >
+      Agenda tu consulta sin costo
+    </a>
   </div>
 </section>
