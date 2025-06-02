@@ -52,14 +52,14 @@ export const DEFAULT_SEO: SEOProps = {
     image: COMPANY_INFO.url + COMPANY_INFO.image
   },
   extend: {
-    link: [
-      { rel: 'icon', type: "image/x-icon", href: '/favicons/favicon.ico' },
-      { rel: 'apple-touch-icon', sizes: "180x180", href: '/favicons/apple-touch-icon.png' },
-      { rel: "icon", type: "image/png", sizes: "32x32", href: "/favicons/favicon-32x32.png" },
-      { rel: "icon", type: "image/png", sizes: "16x16", href: "/favicons/favicon-16x16.png" },
-      { rel: "icon", href: "/favivons/favicon.svg", type: "image/svg+xml" }
+    // link: [
+    //   { rel: 'icon', type: "image/x-icon", href: '/favicons/favicon.ico' },
+    //   { rel: 'apple-touch-icon', sizes: "180x180", href: '/favicons/apple-touch-icon.png' },
+    //   { rel: "icon", type: "image/png", sizes: "32x32", href: "/favicons/favicon-32x32.png" },
+    //   { rel: "icon", type: "image/png", sizes: "16x16", href: "/favicons/favicon-16x16.png" },
+    //   { rel: "icon", href: "/favicons/favicon.svg", type: "image/svg+xml" }
 
-    ],
+    // ],
     meta: [
       { name: 'viewport', content: 'width=device-width, initial-scale=1.0' },
       { name: 'robots', content: 'index, follow' },
