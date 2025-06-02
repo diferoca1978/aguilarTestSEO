@@ -25,11 +25,16 @@ import MobileMenuCloseSvg from "@/assets/images/mobilemenuclose.svg";
         >
           <span class="sr-only">Open mobile menu</span>
           <!-- Open icon -->
-          <MobileMenuSvg id="open-icon" />
+          <MobileMenuSvg id="open-icon" width={32} height={32} />
 
           <!-- Close icon -->
 
-          <MobileMenuCloseSvg class="hidden" id="close-icon" />
+          <MobileMenuCloseSvg
+            class="hidden"
+            id="close-icon"
+            width={28}
+            height={28}
+          />
         </button>
         <!-- Desktop menu -->
         <div class="hidden md:block">
@@ -54,7 +59,7 @@ import MobileMenuCloseSvg from "@/assets/images/mobilemenuclose.svg";
       </div>
       <!-- Mobile menu -->
       <div
-        class="mobile-menu md:hidden absolute top-full backdrop-blur-md right-0 rounded-xl"
+        class="mobile-menu md:hidden absolute top-[152px] backdrop-blur-md right-0 rounded-xl"
       >
         <div class="flex flex-col items-end pr-7 space-y-4 py-2">
           <a id="link" href="/aboutUs" class="text-softWhite-50"
