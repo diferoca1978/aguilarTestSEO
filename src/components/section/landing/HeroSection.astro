@@ -5,21 +5,21 @@ import DistinctBenefits from "./DistinctBenefits.astro";
 ---
 
 <section class="relative h-screen pt-[180px]">
-  <!-- 1. Imagen de fondo cubriendo todo el hero -->
+  <!-- 1. Background image -->
   <Image
     src={heroImage}
     alt="Fondo Hero Aguilar & Abogados"
     class="absolute inset-0 w-full h-full object-cover"
   />
 
-  <!-- 2. Overlay semitransparente para contraste -->
+  <!-- 2. Transparent overlay to improve contrast -->
   <div class="absolute inset-0 bg-deepdark-950/50"></div>
 
-  <!-- 3. Contenedor de texto y CTA centrado -->
+  <!-- 3. Centered container for text and CTA -->
   <div
     class="relative z-10 flex flex-col items-center justify-center text-center px-4 md:px-6 lg:px-8 h-full"
   >
-    <!-- Título principal -->
+    <!-- Main title -->
     <h1
       class="text-[min(10vw,64px)] font-bold text-softWhite-50 mb-4 leading-tight tracking-tight"
     >
@@ -31,13 +31,13 @@ import DistinctBenefits from "./DistinctBenefits.astro";
       es nuestra causa
     </h1>
 
-    <!-- Subtítulo (dos líneas) -->
+    <!-- Subtitle (two lines) -->
     <p class="text-softWhite-50 mb-6 max-w-2xl text-center">
       Somos abogados especializados en seguros, defenderemos tus derechos frente
       a la aseguradora.
     </p>
 
-    <!-- Botón CTA en color dorado de la marca -->
+    <!-- Call to action button in brand gold color -->
     <a
       href="/contact"
       class="px-4 py-2 rounded-xl bg-gradient-to-r from-gold-400 to-gold-500

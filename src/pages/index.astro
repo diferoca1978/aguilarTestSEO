@@ -8,8 +8,8 @@ import {
   generatePageSEO,
 } from "../config/seoConfig.ts";
 import HeroSection from "@/components/section/landing/HeroSection.astro";
-import DistinctBenefits from "@/components/section/landing/DistinctBenefits.astro";
 import ThreeStepsProcessSection from "@/components/section/landing/ThreeStepsProcessSection.astro";
+import SocialTestimonySection from "@/components/section/landing/SocialTestimonySection.astro";
 
 const seoProps = generatePageSEO({
   title: "Abogados expertos en derecho de seguros.",
@@ -34,4 +34,5 @@ const jsonLdSchemas = [ORGANIZATION_SCHEMA, WEBSITE_SCHEMA];
   <!-- Sections -->
   <HeroSection />
   <ThreeStepsProcessSection />
+  <SocialTestimonySection />
 </MainLayout>
