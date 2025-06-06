@@ -5,12 +5,17 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 gsap.registerPlugin(ScrollTrigger);
 
 export function navBarAnimation() {
+
+    if (window.innerWidth < 832) {
+        return;
+    }
+
     ScrollTrigger.create({
         start: "top -80",
         end: "top 110px",
         onEnter: () => {
             gsap.to(".nav-bar", {
-                height: "100px",
+                height: "125px",
                 duration: 0.5,
             });
             gsap.to(".logo", {
