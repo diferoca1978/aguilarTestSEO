@@ -8,7 +8,7 @@ import MobileMenuCloseSvg from "@/assets/images/mobilemenuclose.svg";
 <header
   class="fixed top-0 left-0 right-0 bg-softWhite-50 z-50 w-full flex flex-wrap md:flex-nonwrap main-header"
 >
-  <nav class="w-full h-[150px] mx-auto md:max-w-7xl nav-bar">
+  <nav class="w-full h-[170px] mx-auto md:max-w-7xl nav-bar">
     <div class="flex justify-between items-center px-5">
       <!-- Logo -->
       <div>
@@ -39,17 +39,23 @@ import MobileMenuCloseSvg from "@/assets/images/mobilemenuclose.svg";
         <!-- Desktop menu -->
         <div class="hidden md:block">
           <div class="flex space-x-4 items-center">
-            <a href="/aboutUs" class="text-deepdark-900 nav-link"
+            <a href="/aboutUs" class="text-deepdark-900 font-semibold nav-link"
               >¿Quiénes <span>Somos?</span></a
             >
-            <a href="/services" class="text-deepdark-900 nav-link">Servicios</a>
-            <a href="/successCases" class="text-deepdark-900 nav-link"
+            <a href="/services" class="text-deepdark-900 font-semibold nav-link"
+              >Servicios</a
+            >
+            <a
+              href="/successCases"
+              class="text-deepdark-900 font-semibold nav-link"
               >Casos de <span>Éxito</span></a
             >
-            <a href="/blog" class="text-deepdark-900 nav-link">Blog</a>
+            <a href="/blog" class="text-deepdark-900 font-semibold nav-link"
+              >Blog</a
+            >
             <button
               type="button"
-              class="text-deepdark-900 border border-darkGray-200 rounded-lg px-4 py-1 hover:bg-gold-400 hover:text-softWhite-50 hover:border-softWhite-50 transition duration-300"
+              class="text-deepdark-900 font-semibold border border-darkGray-200 rounded-lg px-4 py-1 hover:bg-gold-400 hover:text-softWhite-50 hover:border-softWhite-50 transition duration-300"
             >
               <a href="/contact">Contacto</a></button
             >
@@ -58,18 +64,25 @@ import MobileMenuCloseSvg from "@/assets/images/mobilemenuclose.svg";
       </div>
       <!-- Mobile menu -->
       <div
-        class="mobile-menu md:hidden absolute top-[152px] bg-softWhite-50 right-0 rounded-xl"
+        class="mobile-menu md:hidden absolute top-[152px] bg-softWhite-50 right-0 px-2 rounded-xl"
       >
-        <div class="flex flex-col items-end pr-7 space-y-4 py-2">
-          <a href="/aboutUs" class="text-deepdark-900 nav-link"
+        <div class="flex flex-col items-end pr-7 space-y-4 mt-2">
+          <a href="/aboutUs" class="text-deepdark-900 font-semibold nav-link"
             >¿Quiénes <span>Somos?</span></a
           >
-          <a href="/services" class="text-deepdark-900 nav-link">Servicios</a>
-          <a href="/successCases" class="text-deepdark-900 nav-link"
+          <a href="/services" class="text-deepdark-900 font-semibold nav-link"
+            >Servicios</a
+          >
+          <a
+            href="/successCases"
+            class="text-deepdark-900 font-semibold nav-link"
             >Casos de <span>Éxito</span></a
           >
-          <a href="/blog" class="text-deepdark-900 nav-link">Blog</a>
-          <a href="/contact" class="text-deepdark-900">Contacto</a>
+          <a href="/blog" class="text-deepdark-900 font-semibold nav-link"
+            >Blog</a
+          >
+          <a href="/contact" class="text-deepdark-900 font-semibold">Contacto</a
+          >
         </div>
       </div>
     </div>

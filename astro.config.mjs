@@ -9,11 +9,11 @@ import sitemap from '@astrojs/sitemap';
 export default defineConfig({
   vite: {
     plugins: [tailwindcss()],
-    server: {
-      host: true,
-      allowedHosts: ['.ngrok-free.app']
-    }
+    
   },
+  // base: "/prueba/",
+  // trailingSlash: "always",
+  // output: "static",
   site: "http://localhost:4321/",
   integrations: [sitemap()]
 });

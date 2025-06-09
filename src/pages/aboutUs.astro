@@ -1,9 +1,29 @@
 ---
 import MainLayout from "@/layouts/MainLayout.astro";
+import { Image } from "astro:assets";
+import lawyerImage from "@/assets/images/lawyer.webp";
 ---
 
 <MainLayout title="Quiénes somos">
-  <div>
-    <h1>Quienes somos</h1>
+  <div class="relative h-screen">
+    <Image
+      src={lawyerImage}
+      alt="Fondo Quiénes Somos Aguilar & Abogados"
+      class="absolute inset-0 w-full h-full object-cover"
+    />
+    <div class="absolute inset-0 bg-deepdark-950/50"></div>
+    <div
+      class="relative z-10 flex flex-col items-center justify-center text-center px-4 md:px-6 lg:px-8 h-full"
+    >
+      <h1
+        class="text-[min(10vw,64px)] font-bold text-softWhite-50 mb-4 leading-tight tracking-tight"
+      >
+        Somos abogados especializados en seguros
+      </h1>
+      <p class="text-softWhite-50 mb-6 max-w-2xl text-center">
+        Somos abogados especializados en seguros, defenderemos tus derechos
+        frente a la aseguradora.
+      </p>
+    </div>
   </div>
 </MainLayout>

@@ -18,22 +18,22 @@ export function navBarAnimation() {
                 height: "125px",
                 duration: 0.5,
             });
-            gsap.to(".logo", {
-                height: "125px",
-                width: "175px",
-                duration: 0.5,
-            });
+            // gsap.to(".logo", {
+            //     height: "125px",
+            //     width: "175px",
+            //     duration: 0.5,
+            // });
         },
         onLeaveBack: () => {
             gsap.to(".nav-bar", {
-                height: "150px",
-                duration: 0.5,
-            });
-            gsap.to(".logo", {
                 height: "170px",
-                width: "250px",
                 duration: 0.5,
             });
+            // gsap.to(".logo", {
+            //     height: "170px",
+            //     width: "250px",
+            //     duration: 0.5,
+            // });
         },
     });
 }
