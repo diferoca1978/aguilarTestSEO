@@ -16,7 +16,7 @@ export const COMPANY_INFO = {
     country: 'Colombia'
   },
   logo: '/assets/images/logo.png', // Replace with actual logo path
-  image: '/assets/images/logo.png', // Replace with actual OG image path
+  image: '/assets/images/og-image.jpg', // Replace with actual OG image path
   foundingDate: '2018', // Replace with actual founding date
   socialMedia: {
     facebook: 'https://www.facebook.com/people/Aguilarabogadosasociados/100064024895879/',

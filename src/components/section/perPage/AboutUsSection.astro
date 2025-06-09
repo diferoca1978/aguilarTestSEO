@@ -1,0 +1,143 @@
+---
+import { Image } from "astro:assets";
+import lawyerImage from "@/assets/images/lawyer.webp";
+import QuoteSvg from "@/assets/icons/quote.svg";
+import TargetArrowSvg from "@/assets/icons/target-arrow.svg";
+import ScheduleSvg from "@/assets/icons/schedule.svg";
+import SearchSvg from "@/assets/icons/search.svg";
+import LottoSvg from "@/assets/icons/lotto.svg";
+---
+
+<section class="">
+    <div class="relative h-screen">
+        <Image
+            src={lawyerImage}
+            alt="Quiénes Somos Aguilar & Abogados"
+            class="absolute inset-0 w-full h-full object-cover"
+        />
+        <div class="absolute inset-0 bg-deepdark-950/50"></div>
+        <div
+            class="relative z-10 px-5 flex items-center h-full md:px-6 lg:px-8"
+        >
+            <div class="max-w-3xl">
+                <h1
+                    class="text-[min(10vw,64px)] font-bold text-softWhite-50 mb-4 leading-tight tracking-tight text-left"
+                >
+                    Quiénes Somos
+                </h1>
+                <p
+                    class="prose text-softWhite-50 text-[min(6vw,18px)] text-left"
+                >
+                    <span class="block">Conozca la historia de la firma</span>
+                    <span class="block">que está detrás de su tranquilidad</span
+                    >
+                </p>
+            </div>
+        </div>
+    </div>
+    <!-- About Us -->
+    <div
+        class="grid grid-cols-1 px-5 py-8 gap-5 mt-5 max-w-7xl mx-auto md:grid-cols-2 md:gap-10 md:py-16"
+    >
+        <div class="flex items-center justify-center p-2 mb-5">
+            <p class="prose text-center text-[min(6vw,18px)] md:text-left">
+                En 2018, Luis Alejandro Aguilar Roa, abogado con honores
+                (Universidad Católica) y especialista en Derecho Comercial y
+                Financiero (Universidad Sergio Arboleda), fundó la firma tras 9
+                años como funcionario de aseguradoras. Creó un equipo que
+                combina experticia técnica con profunda vocación de servicio.
+            </p>
+        </div>
+        <!-- Founder mesage -->
+        <div class="relative z-10">
+            <div
+                class="border border-quill-gray-100 rounded-xl shadow-lg px-5 py-8 md:shadow-none"
+            >
+                <QuoteSvg
+                    width={60}
+                    height={60}
+                    class="absolute top-[-30px] left-4 text-gold-400"
+                />
+
+                <div class="text-center p-5 md:text-left">
+                    <p class="text-deepdark-900">
+                        Quien confía su caso en nuestras manos, recupera algo
+                        más que dinero: recupera la paz.
+                    </p>
+                    <p class="text-deepdark-900 font-bold mt-2">
+                        Luis Alejandro Aguilar Roa,
+                    </p>
+                    <span class="text-deepdark-900 block">Fundador y CEO</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Distinct values -->
+    <div
+        class="grid grid-cols-1 mx-auto max-w-7xl md:grid-cols-4 gap-5 px-5 py-8 mt-5"
+    >
+        <div class="flex flex-col items-center p-5">
+            <ScheduleSvg width={50} height={50} />
+            <h2
+                class="text-deepdark-900 text-[min(6vw,20px)] font-semibold mt-3 text-center"
+            >
+                Puntualidad
+            </h2>
+            <div class="w-[80%] h-px bg-quill-gray-200 my-2"></div>
+            <p class="text-[min(6vw,18px)] text-deepdark-900 text-center">
+                Respetamos sus tiempos y los plazos legales.
+            </p>
+        </div>
+        <div class="flex flex-col items-center p-5">
+            <SearchSvg width={50} height={50} />
+            <h2
+                class="text-deepdark-900 mt-3 text-[min(6vw,20px)] font-semibold text-center"
+            >
+                Transparencia
+            </h2>
+            <div class="w-[80%] h-px bg-quill-gray-200 my-2"></div>
+            <p class="text-[min(6vw,18px)] text-deepdark-900 text-center">
+                Sin letra pequeña. Le explicamos cada detalle.
+            </p>
+        </div>
+        <div class="flex flex-col items-center p-5">
+            <LottoSvg width={50} height={50} />
+            <h2
+                class="text-deepdark-900 mt-3 text-[min(6vw,20px)] font-semibold text-center"
+            >
+                Tranquilidad
+            </h2>
+            <div class="w-[80%] h-px bg-quill-gray-200 my-2"></div>
+            <p class="text-[min(6vw,18px)] text-deepdark-900 text-center">
+                Nos ocupamos de la lucha legal mientras usted se enfoca en lo
+                más importante: su bienestar.
+            </p>
+        </div>
+        <div class="flex flex-col items-center p-5">
+            <TargetArrowSvg width={50} height={50} />
+            <h2
+                class="text-deepdark-900 mt-3 text-[min(6vw,20px)] font-semibold text-center"
+            >
+                Efectividad
+            </h2>
+            <div class="w-[80%] h-px bg-quill-gray-200 my-2"></div>
+            <p class="text-[min(6vw,1 8px)] text-deepdark-900 text-center">
+                Estrategias legales precisas: maximizamos su recuperación
+                económica sin concesiones.
+            </p>
+        </div>
+    </div>
+    <!-- CTA Button -->
+    <div class="mt-7 text-center">
+        <a
+            href="/contact"
+            class="inline-block px-4 py-2 rounded-xl bg-gradient-to-r from-gold-400 to-gold-500
+      hover:from-gold-500 hover:to-gold-400 focus:outline-1
+      text-softWhite-50 font-semibold text-lg
+      shadow-md transition duration-400 ease-in-out
+      transform hover:scale-105"
+        >
+            Agende una asesoría gratuita
+        </a>
+    </div>
+</section>
