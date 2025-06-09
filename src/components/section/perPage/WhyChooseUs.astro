@@ -1,4 +1,9 @@
-<section class="mx-auto my-20 md:my-32">
+---
+import { Image } from "astro:assets";
+import contactSupportSvg from "@/assets/icons/contact_support.svg";
+---
+
+<section class="mx-auto my-16 md:my-32">
     <!-- Why Choose Us -->
     <div class="flex flex-col items-center p-5">
         <h1
@@ -20,7 +25,7 @@
         </div>
     </div>
     <!-- Distinct values -->
-    <div class="grid grid-cols-1 gap-6 mt-5 px-5 max-w-7xl mx-auto">
+    <div class="grid grid-cols-1 gap-6 mt-10 px-5 max-w-7xl mx-auto md:mt-20">
         <!-- Item 1 -->
         <div class="flex items-center gap-4 p-4">
             <span
@@ -95,6 +100,28 @@
                     nuestras acciones.
                 </p>
             </div>
+        </div>
+    </div>
+    <!-- CTA Button -->
+    <div class="flex flex-col items-center p-5 gap-2 mt-16">
+        <h2
+            class="text-deepdark-900 mt-3 text-[min(6vw,20px)] font-semibold text-center"
+        >
+            ¿No sabe cómo empezar?
+        </h2>
+
+        <div>
+            <a
+                href="/contact"
+                class="px-4 py-2 rounded-xl bg-gradient-to-r from-gold-400 to-gold-500 hover:from-gold-500 hover:to-gold-400 focus:outline-1 text-softWhite-50 font-semibold text-lg shadow-md transition duration-400 ease-in-out transform hover:scale-110"
+                >Agende una llamada</a
+            >
+        </div>
+
+        <div class="flex items-center gap-2">
+            <p class="text-deepdark-900 text-[min(4vw,16px)]">
+                Consulte sin costo
+            </p>
         </div>
     </div>
 </section>
