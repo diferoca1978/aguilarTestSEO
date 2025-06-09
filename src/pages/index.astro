@@ -1,11 +1,44 @@
 ---
-import HeroSection from "@/components/section/landing/HeroSection.astro";
+import { SEO } from "astro-seo";
 import MainLayout from "@/layouts/MainLayout.astro";
+import {
+  DEFAULT_SEO,
+  ORGANIZATION_SCHEMA,
+  WEBSITE_SCHEMA,
+  generatePageSEO,
+} from "../config/seoConfig.ts";
+import HeroSection from "@/components/section/landing/HeroSection.astro";
+import ThreeStepsProcessSection from "@/components/section/landing/ThreeStepsProcessSection.astro";
+import SocialTestimonySection from "@/components/section/landing/SocialTestimonySection.astro";
+import Location from "@/components/section/landing/Location.astro";
+import ServicesSection from "@/components/section/landing/ServicesSection.astro";
+import CtaBanner from "@/components/section/landing/CtaBanner.astro";
+
+const seoProps = generatePageSEO({
+  title: "Abogados expertos en derecho de seguros.",
+  description:
+    "Somos abogados especializados en seguros con mas de 18 años de experiencia. Defenderemos sus derechos frente a la aseguradora.",
+  path: "/",
+  image: "/assets/images/herooption1.webp",
+});
+
+const jsonLdSchemas = [ORGANIZATION_SCHEMA, WEBSITE_SCHEMA];
 ---
 
-<MainLayout
-  title="inicio"
-  description="Página de inicio de Aguilar y Asociados"
->
+<MainLayout title=" Abogados de seguros Aguilar & abogados asociados">
+  <SEO {...seoProps} />
+
+  <!-- JSON-LD Structured Data -->
+  {
+    jsonLdSchemas.map((schema) => (
+      <script type="application/ld+json" set:html={JSON.stringify(schema)} />
+    ))
+  }
+  <!-- Sections -->
   <HeroSection />
+  <ServicesSection />
+  <ThreeStepsProcessSection />
+  <SocialTestimonySection />
+  <Location />
+  <CtaBanner />
 </MainLayout>

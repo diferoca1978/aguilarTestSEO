@@ -1,7 +1,199 @@
 ---
+import { Image } from "astro:assets";
 
+import logo from "../../assets/images/logo.svg";
 ---
 
-<div>
-    <h1>Footer</h1>
-</div>
+<section class="w-full border border-t-2 border-quill-gray-100">
+    <footer class="w-full mx-auto md:max-w-7xl">
+        <div class="block space-y-5 p-5 lg:flex lg:justify-between lg:p-5">
+            <!-- Logo-mision -->
+            <div class="flex flex-col items-center px-4 lg:px-0 lg:block">
+                <a href="/">
+                    <Image src={logo} alt="logo" width={250} height={170} />
+                </a>
+
+                <!-- Divider -->
+                <span class="flex">
+                    <span class="h-px flex-1 bg-quill-gray-100 lg:hidden"
+                    ></span>
+                </span>
+            </div>
+
+            <!-- Main-menu -->
+            <div class="text-center">
+                <!-- Divider -->
+                <span class="flex mb-5 lg:mb-0">
+                    <span class="h-px flex-1 bg-quill-gray-100 lg:hidden"
+                    ></span>
+                </span>
+                <h2
+                    class="mb-3 text-[min(6vw,20px)] text-deepdark-900 font-bold"
+                >
+                    Menu
+                </h2>
+
+                <div
+                    class="flex flex-col space-y-2.5 items-center text-center md:space-y-2"
+                >
+                    <a id="link" href="/aboutUs" class="text-deepdark-900"
+                        >¿Quiénes somos?</a
+                    >
+                    <a id="link" href="/services" class="text-deepdark-900"
+                        >Servicios</a
+                    >
+                    <a id="link" href="/successCases" class="text-deepdark-900"
+                        >Casos de Éxito</a
+                    >
+                    <a id="link" href="/blog" class="text-deepdark-900">Blog</a>
+                    <a id="link" href="/contact" class="text-deepdark-900"
+                        >Contacto</a
+                    >
+                </div>
+                <!-- Divider -->
+                <span class="flex mt-5">
+                    <span class="h-px flex-1 bg-quill-gray-100 lg:hidden"
+                    ></span>
+                </span>
+            </div>
+
+            <!-- Contact -->
+            <div class="text-center space-y-2 mb-5">
+                <h1
+                    class="mb-5 text-[min(6vw,20px)] text-deepdark-900 font-bold"
+                >
+                    Contacto
+                </h1>
+                <div class="flex justify-center">
+                    <svg
+                        class="mr-2"
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="24"
+                        height="24"
+                        viewBox="0 0 24 24"
+                        ><rect width="24" height="24" fill="none"></rect><path
+                            fill="currentColor"
+                            d="M12 11.5A2.5 2.5 0 0 1 9.5 9A2.5 2.5 0 0 1 12 6.5A2.5 2.5 0 0 1 14.5 9a2.5 2.5 0 0 1-2.5 2.5M12 2a7 7 0 0 0-7 7c0 5.25 7 13 7 13s7-7.75 7-13a7 7 0 0 0-7-7"
+                        ></path></svg
+                    >
+                    <p class="text-deepdark-900 text-[min(6vw,18px)]">
+                        Cra 58 #119A -49, Bogotá
+                    </p>
+                </div>
+                <div class="flex justify-center">
+                    <svg
+                        class="mr-2"
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="24"
+                        height="24"
+                        viewBox="0 0 24 24"
+                        ><rect width="24" height="24" fill="none"></rect><path
+                            fill="currentColor"
+                            d="M6.62 10.79c1.44 2.83 3.76 5.15 6.59 6.59l2.2-2.2c.28-.28.67-.36 1.02-.25c1.12.37 2.32.57 3.57.57a1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57c.11.35.03.74-.25 1.02z"
+                        ></path></svg
+                    >
+                    <p class="text-deepdark-900 text-[min(6vw,18px)]">
+                        301-551-1676
+                    </p>
+                </div>
+                <div class="flex justify-center">
+                    <svg
+                        class="mr-2"
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="24"
+                        height="24"
+                        viewBox="0 0 24 24"
+                        ><rect width="24" height="24" fill="none"></rect><path
+                            fill="currentColor"
+                            d="m20 8l-8 5l-8-5V6l8 5l8-5m0-2H4c-1.11 0-2 .89-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2"
+                        ></path></svg
+                    >
+                    <p class="text-deepdark-900 text-[min(6vw,18px)]">
+                        alejandro.aguilar@aguilarabogadosasociados.co
+                    </p>
+                </div>
+                <span class="flex mt-5">
+                    <span class="h-px flex-1 bg-quill-gray-100 lg:hidden"
+                    ></span>
+                </span>
+            </div>
+            <!-- Social -->
+            <div class="text-center">
+                <h1
+                    class="mb-5 text-[min(6vw,20px)] text-deepdark-900 font-bold"
+                >
+                    Síguenos
+                </h1>
+                <div class="flex justify-around items-center">
+                    <a
+                        href="https://www.instagram.com/aguilar_abogados_/"
+                        target="_blank"
+                    >
+                        <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="24"
+                            height="24"
+                            viewBox="0 0 24 24"
+                            ><rect width="24" height="24" fill="none"
+                            ></rect><path
+                                fill="currentColor"
+                                d="M7.8 2h8.4C19.4 2 22 4.6 22 7.8v8.4a5.8 5.8 0 0 1-5.8 5.8H7.8C4.6 22 2 19.4 2 16.2V7.8A5.8 5.8 0 0 1 7.8 2m-.2 2A3.6 3.6 0 0 0 4 7.6v8.8C4 18.39 5.61 20 7.6 20h8.8a3.6 3.6 0 0 0 3.6-3.6V7.6C20 5.61 18.39 4 16.4 4zm9.65 1.5a1.25 1.25 0 0 1 1.25 1.25A1.25 1.25 0 0 1 17.25 8A1.25 1.25 0 0 1 16 6.75a1.25 1.25 0 0 1 1.25-1.25M12 7a5 5 0 0 1 5 5a5 5 0 0 1-5 5a5 5 0 0 1-5-5a5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3a3 3 0 0 0 3 3a3 3 0 0 0 3-3a3 3 0 0 0-3-3"
+                            ></path></svg
+                        >
+                    </a>
+                    <a href="#">
+                        <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="24"
+                            height="24"
+                            viewBox="0 0 24 24"
+                        >
+                            <g
+                                fill="none"
+                                stroke="#000"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                                stroke-width="1.5"
+                                color="#000"
+                            >
+                                <path
+                                    d="M7 10v7m4-4v4m0-4a3 3 0 1 1 6 0v4m-6-4v-3M7.008 7h-.009"
+                                ></path>
+                                <path
+                                    d="M2.5 12c0-4.478 0-6.718 1.391-8.109S7.521 2.5 12 2.5c4.478 0 6.718 0 8.109 1.391S21.5 7.521 21.5 12c0 4.478 0 6.718-1.391 8.109S16.479 21.5 12 21.5c-4.478 0-6.718 0-8.109-1.391S2.5 16.479 2.5 12"
+                                ></path>
+                            </g>
+                        </svg>
+                    </a>
+                    <a href="#"
+                        ><svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="24"
+                            height="24"
+                            viewBox="0 0 24 24"
+                        >
+                            <path
+                                fill="#000"
+                                d="M19.02 4.975A9.93 9.93 0 0 0 2.07 12A9.935 9.935 0 0 0 12 21.935a10 10 0 0 0 3.8-.75a10.2 10.2 0 0 0 3.22-2.16a9.934 9.934 0 0 0 0-14.05m-.7 13.34a8.92 8.92 0 0 1-5.32 2.57v-6.56h1.88a1 1 0 0 0 0-2H13v-2.74a1 1 0 0 1 1-1h1.2a1 1 0 0 0 0-2h-1.7a2.5 2.5 0 0 0-2.5 2.5v3.24H9.13a1 1 0 1 0 0 2H11v6.56a8.919 8.919 0 1 1 9.26-5.47a9.1 9.1 0 0 1-1.94 2.9"
+                                stroke-width="0.5"
+                                stroke="#000"></path>
+                        </svg></a
+                    >
+                </div>
+            </div>
+        </div>
+    </footer>
+    <span class="flex">
+        <span class="h-px flex-1 bg-quill-gray-100"></span>
+    </span>
+    <div class="my-1 flex justify-between items-center">
+        <p class="text-[min(4vw,12px)] text-deepdark-500">
+            Aguilar & Abogados Asociados @2025 <span
+                >Todos los derechos reservados</span
+            >
+        </p>
+        <a href="#" class="text-[min(4vw,12px)] text-deepdark-500"
+            >Terminos y condiciones</a
+        >
+    </div>
+</section>

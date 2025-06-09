@@ -1,17 +1,19 @@
 ---
 import LogoSvg from "@/assets/images/logo.svg";
+import MobileMenuSvg from "@/assets/images/mobilemenu.svg";
+import MobileMenuCloseSvg from "@/assets/images/mobilemenuclose.svg";
 ---
 
 <!-- Logo -->
 <header
-  class="sticky top-0 inset-x-0 flex flex-wrap md:flex-nonwrap z-50 w-full backdrop-blur-3xl main-header"
+  class="fixed top-0 left-0 right-0 bg-softWhite-50 z-50 w-full flex flex-wrap md:flex-nonwrap main-header"
 >
-  <nav class="w-full h-[200px] mx-auto md:max-w-7xl nav-bar">
+  <nav class="w-full h-[170px] mx-auto md:max-w-7xl nav-bar">
     <div class="flex justify-between items-center px-5">
       <!-- Logo -->
       <div>
         <a href="/">
-          <LogoSvg width={250} height={200} />
+          <LogoSvg width={250} height={170} class="logo" />
           <span class="sr-only">Logo</span>
         </a>
       </div>
@@ -23,85 +25,71 @@ import LogoSvg from "@/assets/images/logo.svg";
         >
           <span class="sr-only">Open mobile menu</span>
           <!-- Open icon -->
-          <svg
-            class="block text-gray-700 hover:text-gray-900"
-            id="open-icon"
-            xmlns="http://www.w3.org/2000/svg"
-            width="24"
-            height="24"
-            viewBox="0 0 24 24"
-            ><g
-              fill="none"
-              stroke="currentColor"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              stroke-width="2"
-              ><path d="M20 5h-13"></path><path d="M20 10h-10"></path><path
-                d="M20 15h-16"></path><path d="M20 20h-13"></path></g
-            ></svg
-          >
+          <MobileMenuSvg id="open-icon" width={32} height={32} />
 
           <!-- Close icon -->
 
-          <svg
-            class="hidden text-gray-700 hover:text-gray-900"
+          <MobileMenuCloseSvg
+            class="hidden"
             id="close-icon"
-            xmlns="http://www.w3.org/2000/svg"
-            width="24"
-            height="24"
-            viewBox="0 0 24 24"
-            ><g
-              fill="none"
-              stroke="currentColor"
-              stroke-dasharray="16"
-              stroke-dashoffset="16"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              stroke-width="2"
-              ><path d="M7 7l10 10" stroke-dashoffset="0"></path><path
-                d="M17 7l-10 10"
-                stroke-dashoffset="0"></path></g
-            ></svg
-          >
+            width={28}
+            height={28}
+          />
         </button>
+        <!-- Desktop menu -->
+        <div class="hidden md:block">
+          <div class="flex space-x-4 items-center">
+            <a
+              href="/aboutUs"
+              class="flex space-x-1 text-deepdark-900 font-semibold nav-link"
+              ><span>¿Quiénes</span> <span>Somos?</span></a
+            >
+            <a href="/services" class="text-deepdark-900 font-semibold nav-link"
+              >Servicios</a
+            >
+            <a
+              href="/successCases"
+              class="text-deepdark-900 font-semibold nav-link"
+              >Casos de <span>Éxito</span></a
+            >
+            <a href="/blog" class="text-deepdark-900 font-semibold nav-link"
+              >Blog</a
+            >
+            <button
+              type="button"
+              class="text-deepdark-900 font-semibold border border-darkGray-200 rounded-lg px-4 py-1 hover:bg-gold-400 hover:text-softWhite-50 hover:border-softWhite-50 transition duration-300"
+            >
+              <a href="/contact">Contacto</a></button
+            >
+          </div>
+        </div>
       </div>
-      <!-- Desktop menu -->
-      <div class="hidden md:block">
-        <div class="flex space-x-4 items-center">
-          <a id="link" href="/aboutUs" class="text-deepdark-900"
+      <!-- Mobile menu -->
+      <div
+        class="mobile-menu md:hidden absolute top-[152px] bg-softWhite-50 right-0 px-2 rounded-xl"
+      >
+        <div class="flex flex-col items-end pr-7 space-y-4 mt-2">
+          <a href="/aboutUs" class="text-deepdark-900 font-semibold nav-link"
             >¿Quiénes <span>Somos?</span></a
           >
-          <a id="link" href="/services" class="text-deepdark-900">Servicios</a>
-          <a id="link" href="/successCases" class="text-deepdark-900"
+          <a href="/services" class="text-deepdark-900 font-semibold nav-link"
+            >Servicios</a
+          >
+          <a
+            href="/successCases"
+            class="text-deepdark-900 font-semibold nav-link"
             >Casos de <span>Éxito</span></a
           >
-          <a id="link" href="/blog" class="text-deepdark-900">Blog</a>
-          <button
-            type="button"
-            class="text-deepdark-900 border border-darkGray-200 rounded-lg px-4 py-1 hover:bg-gold-400 hover:text-softWhite-50 hover:border-softWhite-50 transition duration-300"
+          <a href="/blog" class="text-deepdark-900 font-semibold nav-link"
+            >Blog</a
           >
-            <a id="link" href="/contact">Contacto</a></button
+          <a href="/contact" class="text-deepdark-900 font-semibold">Contacto</a
           >
         </div>
       </div>
     </div>
-    <!-- Mobile menu -->
-    <div class="mobile-menu md:hidden">
-      <div class="flex flex-col items-end pr-7 space-y-4 bg-orangelight">
-        <a id="link" href="/aboutUs" class="text-deepdark-900"
-          >¿Quiénes <span>Somos?</span></a
-        >
-        <a id="link" href="/services" class="text-deepdark-900">Servicios</a>
-        <a id="link" href="/successCases" class="text-deepdark-900"
-          >Casos de <span>Éxito</span></a
-        >
-        <a id="link" href="/blog" class="text-deepdark-900">Blog</a>
-        <a id="link" href="/contact" class="text-deepdark-900">Contacto</a>
-      </div>
-    </div>
   </nav>
 </header>
-
 <style>
   .mobile-menu {
     max-height: 0;
@@ -116,7 +104,7 @@ import LogoSvg from "@/assets/images/logo.svg";
 
 <script>
   const btn = document.querySelector(
-    "button.open-mobile-menu"
+    "button.open-mobile-menu",
   ) as HTMLButtonElement;
   const menu = document.querySelector(".mobile-menu") as HTMLDivElement;
   const openIcon = document.querySelector("#open-icon") as HTMLElement;
@@ -125,7 +113,7 @@ import LogoSvg from "@/assets/images/logo.svg";
   const currentPath = window.location.pathname;
   console.log("Current Path:", currentPath);
 
-  const links = document.querySelectorAll("#link");
+  const links = document.querySelectorAll(".nav-link");
   links.forEach((link) => {
     if (link.getAttribute("href") === currentPath) {
       link.classList.add("text-gold-500");
@@ -139,4 +127,10 @@ import LogoSvg from "@/assets/images/logo.svg";
     openIcon.classList.toggle("hidden");
     closeIcon.classList.toggle("hidden");
   });
+</script>
+
+<script>
+  import { navBarAnimation } from "@/scripts/gsap/navAnimation";
+
+  navBarAnimation();
 </script>

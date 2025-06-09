@@ -1,11 +1,56 @@
 ---
-
+import { Image } from "astro:assets";
+import heroImage from "../../../assets/images/herooption1.webp";
+import DistinctBenefits from "./DistinctBenefits.astro";
 ---
 
-<section>
-  <div>
-    <h1 class="text-[min(10vw,64px)] text-gold-500 text-center bg-darkGray-400 font-extrabold hover:text-gold-400">Welcome to Our Website</h1>
-    <p>Your journey to excellence starts here.</p>
-    
+<section class="relative h-screen">
+  <!-- 1. Background image -->
+  <Image
+    src={heroImage}
+    alt="Fondo Hero Aguilar & Abogados"
+    class="absolute inset-0 w-full h-full object-cover"
+  />
+
+  <!-- 2. Transparent overlay to improve contrast -->
+  <div class="absolute inset-0 bg-deepdark-950/50"></div>
+
+  <!-- 3. Centered container for text and CTA -->
+  <div
+    class="relative z-10 flex flex-col items-center justify-center text-center px-4 md:px-6 lg:px-8 h-full"
+  >
+    <!-- Main title -->
+    <h1
+      class="text-[min(10vw,64px)] font-bold text-softWhite-50 mb-4 leading-tight tracking-tight"
+    >
+      Tu tranquilidad
+    </h1>
+    <h1
+      class="text-[min(10vw,64px)] font-bold text-softWhite-50 mb-4 leading-tight tracking-tight"
+    >
+      es nuestra causa
+    </h1>
+
+    <!-- Subtitle (two lines) -->
+    <p class="text-softWhite-50 mb-6 max-w-2xl text-center">
+      Somos abogados especializados en seguros, defenderemos tus derechos frente
+      a la aseguradora.
+    </p>
+
+    <!-- Call to action button in brand gold color -->
+    <a
+      href="/contact"
+      class="px-4 py-2 rounded-xl bg-gradient-to-r from-gold-400 to-gold-500
+      hover:from-gold-500
+      hover:to-gold-400 focus:outline-1
+      text-softWhite-50 font-semibold text-lg
+        shadow-md transition duration-400 ease-in-out
+         transform hover:scale-105"
+    >
+      Agende su consulta sin costo
+    </a>
+  </div>
+  <div class="absolute left-0 right-0 z-10 md:bottom-[-180px]">
+    <DistinctBenefits />
   </div>
 </section>
