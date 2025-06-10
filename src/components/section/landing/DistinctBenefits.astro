@@ -1,0 +1,46 @@
+---
+import justiceSvg from "@/assets/icons/justice.svg";
+import checkSvg from "@/assets/icons/check_circle.svg";
+import heartSvg from "@/assets/icons/heart_check.svg";
+
+import { Image } from "astro:assets";
+---
+
+<section class="max-w-7xl mx-auto">
+    <div
+        class="grid grid-cols-1 md:grid-cols-3 gap-5 px-5 py-8 bg-deepdark-950 md:rounded-2xl"
+    >
+        <div class="flex flex-col items-center p-5">
+            <Image src={justiceSvg} width={50} height={50} alt="Justice" />
+            <h2
+                class="text-softWhite-50 text-[min(6vw,20px)] font-semibold mt-3 text-center"
+            >
+                Abogados expertos en seguros
+            </h2>
+            <p class="text-softWhite-50">+13 años de experiencia</p>
+        </div>
+        <div class="flex flex-col items-center p-5">
+            <Image src={checkSvg} width={50} height={50} alt="Justice" />
+            <h2
+                class="text-softWhite-50 mt-3 text-[min(6vw,20px)] font-semibold text-center"
+            >
+                Resultados efectivos
+            </h2>
+            <p class="text-softWhite-50">96 reseñas en Google</p>
+            <div class="flex items-center gap-2">
+                <p class="text-softWhite-50">⭐⭐⭐⭐⭐</p>
+            </div>
+        </div>
+        <div class="flex flex-col items-center p-5">
+            <Image src={heartSvg} width={50} height={50} alt="Justice" />
+            <h2
+                class="text-softWhite-50 mt-3 text-[min(6vw,20px)] font-semibold text-center"
+            >
+                Atención empática y transparente
+            </h2>
+            <p class="text-softWhite-50 text-center">
+                Puntualidad, transparencia y efectividad
+            </p>
+        </div>
+    </div>
+</section>

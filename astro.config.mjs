@@ -3,9 +3,17 @@ import { defineConfig } from 'astro/config';
 
 import tailwindcss from '@tailwindcss/vite';
 
+import sitemap from '@astrojs/sitemap';
+
 // https://astro.build/config
 export default defineConfig({
   vite: {
-    plugins: [tailwindcss()]
-  }
+    plugins: [tailwindcss()],
+    
+  },
+  // base: "/prueba/",
+  // trailingSlash: "always",
+  // output: "static",
+  site: "http://localhost:4321/",
+  integrations: [sitemap()]
 });

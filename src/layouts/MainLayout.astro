@@ -1,18 +1,57 @@
 ---
+import "../styles/global.css";
+import Navigation from "../components/global/Navigation.astro";
+import Footer from "@/components/global/Footer.astro";
+
 interface Props {
-    title: string;
+  title: string;
 }
 const { title } = Astro.props;
 ---
 
 <!doctype html>
-<html lang="es">
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>{title}</title>
-    </head>
-    <body>
-        <slot />
-    </body>
+<html lang="es_CO">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{title}</title>
+    <link rel="icon" type="image/x-icon" href="/favicons/favicon.ico" />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="/favicons/apple-touch-icon.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="/favicons/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="/favicons/favicon-16x16.png"
+    />
+    <link rel="sitemap" href="/sitemap-index.xml" />
+
+    <!-- SEO component will be injected here by pages -->
+    <slot name="head" />
+  </head>
+  <body>
+    <Navigation />
+    <main class="pt-[150px] md:pt-[150px] min-h-[calc(100vh-150px)]">
+      <slot />
+    </main>
+    <Footer />
+  </body>
 </html>
+
+<style>
+  html,
+  body {
+    height: 100%;
+    padding: 0;
+    margin: 0;
+  }
+</style>

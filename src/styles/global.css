@@ -1,4 +1,3 @@
-
 @font-face {
   font-family: 'Montserrat';
   src: url('/fonts/Montserrat-VariableFont_wght.woff2') format('woff2');
@@ -6,6 +5,7 @@
   font-display: swap;
   font-style: normal;
 }
+
 @font-face {
   font-family: 'Roboto';
   src: url('/fonts/Roboto-VariableFont_wdth,wght.woff2') format('woff2');
@@ -16,26 +16,32 @@
 
 
 @import "tailwindcss";
+@plugin "@tailwindcss/typography";
 
 @layer base {
   h1 {
     font-family: var(--font-montserrat);
   }
+
   h2 {
     font-family: var(--font-montserrat);
   }
+
   h3 {
     font-family: var(--font-montserrat);
   }
+
   p {
     font-family: var(--font-roboto);
+    font-size: var(--text-lg);
   }
+
   a {
     font-family: var(--font-roboto);
+    font-size: var(--text-lg);
   }
-  span {
-    font-family: var(--font-roboto);
-  }
+
+
 }
 
 @theme {
@@ -44,55 +50,61 @@
   --font-montserrat: 'Montserrat', system-ui, sans-serif;
   --font-roboto: 'Roboto', system-ui, serif;
 
-/* Color palette */
+  /* Color palette */
 
---color-gold-50: #f9f6ed;
---color-gold-100: #f0e8d1;
---color-gold-200: #e2d0a6;
---color-gold-300: #d0b374;
---color-gold-400: #c49b53;
---color-gold-500: #b3843f;
---color-gold-600: #9a6834;
---color-gold-700: #7b4e2d;
---color-gold-800: #68412b;
---color-gold-900: #5a3829;
---color-gold-950: #331d15;
+  --color-gold-50: #f9f6ed;
+  --color-gold-100: #f0e8d1;
+  --color-gold-200: #e2d0a6;
+  --color-gold-300: #d0b374;
+  --color-gold-400: #c49b53;
+  --color-gold-500: #b3843f;
+  --color-gold-600: #9a6834;
+  --color-gold-700: #7b4e2d;
+  --color-gold-800: #68412b;
+  --color-gold-900: #5a3829;
+  --color-gold-950: #331d15;
 
---color-deepdark-50: #f6f6f6;
---color-deepdark-100: #e7e7e7;
---color-deepdark-200: #d1d1d1;
---color-deepdark-300: #b0b0b0;
---color-deepdark-400: #888888;
---color-deepdark-500: #6d6d6d;
---color-deepdark-600: #5d5d5d;
---color-deepdark-700: #4f4f4f;
---color-deepdark-800: #454545;
---color-deepdark-900: #3d3d3d;
---color-deepdark-950: #202020;
+  --color-deepdark-50: #f6f6f6;
+  --color-deepdark-100: #e7e7e7;
+  --color-deepdark-200: #d1d1d1;
+  --color-deepdark-300: #b0b0b0;
+  --color-deepdark-400: #888888;
+  --color-deepdark-500: #6d6d6d;
+  --color-deepdark-600: #5d5d5d;
+  --color-deepdark-700: #4f4f4f;
+  --color-deepdark-800: #454545;
+  --color-deepdark-900: #3d3d3d;
+  --color-deepdark-950: #202020;
 
---color-darkGray-50: #f6f6f6;
---color-darkGray-100: #e7e7e7;
---color-darkGray-200: #d1d1d1;
---color-darkGray-300: #b0b0b0;
---color-darkGray-400: #888888;
---color-darkGray-500: #6d6d6d;
---color-darkGray-600: #5d5d5d;
---color-darkGray-700: #4f4f4f;
---color-darkGray-800: #444444;
---color-darkGray-900: #3d3d3d;
---color-darkGray-950: #262626;
+  --color-quill-gray-50: #f7f7f5;
+  --color-quill-gray-100: #ebebe9;
+  --color-quill-gray-200: #d1d0cb;
+  --color-quill-gray-300: #bdbcb4;
+  --color-quill-gray-400: #a19e96;
+  --color-quill-gray-500: #8f8a80;
+  --color-quill-gray-600: #827d74;
+  --color-quill-gray-700: #6d6961;
+  --color-quill-gray-800: #5a5652;
+  --color-quill-gray-900: #4a4744;
+  --color-quill-gray-950: #272523;
 
---color-softWhite-50: #fefefe;
---color-softWhite-100: #efefef;
---color-softWhite-200: #dcdcdc;
---color-softWhite-300: #bdbdbd;
---color-softWhite-400: #989898;
---color-softWhite-500: #7c7c7c;
---color-softWhite-600: #656565;
---color-softWhite-700: #525252;
---color-softWhite-800: #464646;
---color-softWhite-900: #3d3d3d;
---color-softWhite-950: #292929;
+  --color-softWhite-50: #fefefe;
+  --color-softWhite-100: #efefef;
+  --color-softWhite-200: #dcdcdc;
+  --color-softWhite-300: #bdbdbd;
+  --color-softWhite-400: #989898;
+  --color-softWhite-500: #7c7c7c;
+  --color-softWhite-600: #656565;
+  --color-softWhite-700: #525252;
+  --color-softWhite-800: #464646;
+  --color-softWhite-900: #3d3d3d;
+  --color-softWhite-950: #292929;
 
+  /* Brakepoint */
+
+  --breakpoint-md: 832px
 }
 
+@utility mask-fade-bottom {
+  mask-image: linear-gradient(to bottom, black 80%, transparent 100%);
+}

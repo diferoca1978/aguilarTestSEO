@@ -1,0 +1,136 @@
+---
+import LogoSvg from "@/assets/images/logo.svg";
+import MobileMenuSvg from "@/assets/images/mobilemenu.svg";
+import MobileMenuCloseSvg from "@/assets/images/mobilemenuclose.svg";
+---
+
+<!-- Logo -->
+<header
+  class="fixed top-0 left-0 right-0 bg-softWhite-50 z-50 w-full flex flex-wrap md:flex-nonwrap main-header"
+>
+  <nav class="w-full h-[170px] mx-auto md:max-w-7xl nav-bar">
+    <div class="flex justify-between items-center px-5">
+      <!-- Logo -->
+      <div>
+        <a href="/">
+          <LogoSvg width={250} height={170} class="logo" />
+          <span class="sr-only">Logo</span>
+        </a>
+      </div>
+      <!-- Mobile menu button -->
+      <div>
+        <button
+          type="button"
+          class="relative items-center justify-center p-2 focus:outline-0 md:hidden open-mobile-menu"
+        >
+          <span class="sr-only">Open mobile menu</span>
+          <!-- Open icon -->
+          <MobileMenuSvg id="open-icon" width={32} height={32} />
+
+          <!-- Close icon -->
+
+          <MobileMenuCloseSvg
+            class="hidden"
+            id="close-icon"
+            width={28}
+            height={28}
+          />
+        </button>
+        <!-- Desktop menu -->
+        <div class="hidden md:block">
+          <div class="flex space-x-4 items-center">
+            <a
+              href="/aboutUs"
+              class="flex space-x-1 text-deepdark-900 font-semibold nav-link"
+              ><span>¿Quiénes</span> <span>Somos?</span></a
+            >
+            <a href="/services" class="text-deepdark-900 font-semibold nav-link"
+              >Servicios</a
+            >
+            <a
+              href="/successCases"
+              class="text-deepdark-900 font-semibold nav-link"
+              >Casos de <span>Éxito</span></a
+            >
+            <a href="/blog" class="text-deepdark-900 font-semibold nav-link"
+              >Blog</a
+            >
+            <button
+              type="button"
+              class="text-deepdark-900 font-semibold border border-darkGray-200 rounded-lg px-4 py-1 hover:bg-gold-400 hover:text-softWhite-50 hover:border-softWhite-50 transition duration-300"
+            >
+              <a href="/contact">Contacto</a></button
+            >
+          </div>
+        </div>
+      </div>
+      <!-- Mobile menu -->
+      <div
+        class="mobile-menu md:hidden absolute top-[152px] bg-softWhite-50 right-0 px-2 rounded-xl"
+      >
+        <div class="flex flex-col items-end pr-7 space-y-4 mt-2">
+          <a href="/aboutUs" class="text-deepdark-900 font-semibold nav-link"
+            >¿Quiénes <span>Somos?</span></a
+          >
+          <a href="/services" class="text-deepdark-900 font-semibold nav-link"
+            >Servicios</a
+          >
+          <a
+            href="/successCases"
+            class="text-deepdark-900 font-semibold nav-link"
+            >Casos de <span>Éxito</span></a
+          >
+          <a href="/blog" class="text-deepdark-900 font-semibold nav-link"
+            >Blog</a
+          >
+          <a href="/contact" class="text-deepdark-900 font-semibold">Contacto</a
+          >
+        </div>
+      </div>
+    </div>
+  </nav>
+</header>
+<style>
+  .mobile-menu {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s ease-out;
+  }
+  .mobile-menu.open {
+    max-height: 1000px;
+    transition: max-height 0.8s ease-in;
+  }
+</style>
+
+<script>
+  const btn = document.querySelector(
+    "button.open-mobile-menu",
+  ) as HTMLButtonElement;
+  const menu = document.querySelector(".mobile-menu") as HTMLDivElement;
+  const openIcon = document.querySelector("#open-icon") as HTMLElement;
+  const closeIcon = document.querySelector("#close-icon") as HTMLElement;
+
+  const currentPath = window.location.pathname;
+  console.log("Current Path:", currentPath);
+
+  const links = document.querySelectorAll(".nav-link");
+  links.forEach((link) => {
+    if (link.getAttribute("href") === currentPath) {
+      link.classList.add("text-gold-500");
+    } else {
+      link.classList.remove("text-gold-500");
+    }
+  });
+
+  btn.addEventListener("click", () => {
+    menu.classList.toggle("open");
+    openIcon.classList.toggle("hidden");
+    closeIcon.classList.toggle("hidden");
+  });
+</script>
+
+<script>
+  import { navBarAnimation } from "@/scripts/gsap/navAnimation";
+
+  navBarAnimation();
+</script>
