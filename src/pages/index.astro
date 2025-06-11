@@ -2,11 +2,10 @@
 import { SEO } from "astro-seo";
 import MainLayout from "@/layouts/MainLayout.astro";
 import {
-  DEFAULT_SEO,
   ORGANIZATION_SCHEMA,
   WEBSITE_SCHEMA,
   generatePageSEO,
-} from "../config/seoConfig.ts";
+} from "@/config/seoConfig";
 import HeroSection from "@/components/section/landing/HeroSection.astro";
 import ThreeStepsProcessSection from "@/components/section/landing/ThreeStepsProcessSection.astro";
 import SocialTestimonySection from "@/components/section/landing/SocialTestimonySection.astro";
@@ -26,7 +25,7 @@ const jsonLdSchemas = [ORGANIZATION_SCHEMA, WEBSITE_SCHEMA];
 ---
 
 <MainLayout title=" Abogados de seguros Aguilar & abogados asociados">
-  <fragment slot="head">
+  <Fragment slot="head">
     <SEO {...seoProps} />
     <!-- JSON-LD Structured Data -->
     {
@@ -34,8 +33,7 @@ const jsonLdSchemas = [ORGANIZATION_SCHEMA, WEBSITE_SCHEMA];
         <script type="application/ld+json" set:html={JSON.stringify(schema)} />
       ))
     }
-  </fragment>
-
+  </Fragment>
   <!-- Sections -->
   <HeroSection />
   <ServicesSection />

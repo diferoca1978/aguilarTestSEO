@@ -3,30 +3,21 @@ import { SEO } from "astro-seo";
 import MainLayout from "@/layouts/MainLayout.astro";
 import AboutUsSection from "@/components/section/perPage/AboutUsSection.astro";
 import WhyChooseUsSection from "@/components/section/perPage/WhyChooseUs.astro";
-import { ORGANIZATION_SCHEMA, generatePageSEO } from "@/config/seoConfig";
+import { generatePageSEO } from "@/config/seoConfig";
 
 const seoProps = generatePageSEO({
   title: "Quiénes somos",
   description:
-    "Somos abogados especializados en seguros con mas de 18 años de experiencia. Defenderemos sus derechos frente a la aseguradora.",
+    "Somos abogados especializados en seguros con mas de 15 años de experiencia.",
   path: "/aboutUs",
   image: "/assets/images/og-image.png",
 });
-
-const jsonLdSchemas = [ORGANIZATION_SCHEMA];
 ---
 
 <MainLayout title="Quiénes somos">
-  <fragment slot="head">
+  <Fragment slot="head">
     <SEO {...seoProps} />
-
-    {
-      jsonLdSchemas.map((schema) => (
-        <script type="application/ld+json" set:html={JSON.stringify(schema)} />
-      ))
-    }
-  </fragment>
-
+  </Fragment>
   <AboutUsSection />
   <WhyChooseUsSection />
 </MainLayout>

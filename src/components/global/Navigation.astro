@@ -1,5 +1,5 @@
 ---
-import LogoSvg from "@/assets/images/logoBlackLetters.png";
+import LogoSvg from "@/assets/images/logoblackletters.svg";
 import MobileMenuSvg from "@/assets/images/mobilemenu.svg";
 import MobileMenuCloseSvg from "@/assets/images/mobilemenuclose.svg";
 import { Image } from "astro:assets";
@@ -14,7 +14,7 @@ import { Image } from "astro:assets";
       <!-- Logo -->
       <div>
         <a href="/">
-          <Image src={LogoSvg} alt="Logo" class="w-48" />
+          <LogoSvg width={250} height={130} class="logo" />
           <span class="sr-only">Logo</span>
         </a>
       </div>
@@ -40,7 +40,7 @@ import { Image } from "astro:assets";
         <div class="hidden md:block">
           <div class="flex space-x-4 items-center">
             <a
-              href="/aboutUs"
+              href="/quienesSomos"
               class="flex space-x-1 text-deepdark-900 font-semibold nav-link"
               ><span>¿Quiénes</span> <span>Somos?</span></a
             >
@@ -72,19 +72,19 @@ import { Image } from "astro:assets";
                 class="absolute left-0 top-full mt-1 w-48 bg-softWhite-50 z-10 rounded-xl shadow-lg hidden"
               >
                 <a
-                  href="#"
-                  class="block px-4 py-2 text-deepdark-900 hover:bg-gold-100 hover:rounded-xl transition"
-                  >Empresas</a
-                >
-                <a
-                  href="#"
+                  href="/serviciosPersonas"
                   class="block px-4 py-2 text-deepdark-900 hover:bg-gold-100 hover:rounded-xl transition"
                   >Personas</a
+                >
+                <a
+                  href="/serviciosEmpresas"
+                  class="block px-4 py-2 text-deepdark-900 hover:bg-gold-100 hover:rounded-xl transition"
+                  >Empresas</a
                 >
               </div>
             </div>
             <a
-              href="/successCases"
+              href="/casosDeExito"
               class="text-deepdark-900 font-semibold nav-link"
               >Casos de <span>Éxito</span></a
             >
@@ -95,7 +95,7 @@ import { Image } from "astro:assets";
               type="button"
               class="text-deepdark-900 font-semibold border border-darkGray-200 rounded-xl px-4 py-1 hover:bg-gold-400 hover:text-softWhite-50 hover:border-softWhite-50 transition duration-300"
             >
-              <a href="/contact">Contacto</a></button
+              <a href="/contacto">Contacto</a></button
             >
           </div>
         </div>
@@ -105,13 +105,15 @@ import { Image } from "astro:assets";
         class="mobile-menu md:hidden absolute top-[152px] bg-softWhite-50 right-0 px-2 rounded-2xl"
       >
         <div class="flex flex-col items-end pr-7 space-y-4 mt-2">
-          <a href="/aboutUs" class="text-deepdark-900 font-semibold nav-link"
+          <a
+            href="/quienesSomos"
+            class="text-deepdark-900 font-semibold nav-link"
             >¿Quiénes <span>Somos?</span></a
           >
           <!-- Servicios mobile indent with toggle -->
           <div class="flex flex-col items-end">
             <a
-              href="#"
+              href="/serviciosPersonas"
               id="mobile-servicios-toggle"
               class="flex items-center text-deepdark-900 font-semibold nav-link cursor-pointer"
             >
@@ -134,19 +136,26 @@ import { Image } from "astro:assets";
               id="mobile-servicios-dropdown"
               class="items-end ml-4 mt-1 space-y-2 hidden"
             >
-              <a href="#" class="text-deepdark-950 nav-link block">Empresas</a>
-              <a href="#" class="text-deepdark-950 nav-link block">Personas</a>
+              <a
+                href="/serviciosPersonas"
+                class="text-deepdark-950 nav-link block">Personas</a
+              >
+              <a
+                href="/serviciosEmpresas"
+                class="text-deepdark-950 nav-link block">Empresas</a
+              >
             </div>
           </div>
           <a
-            href="/successCases"
+            href="/casosDeExito"
             class="text-deepdark-900 font-semibold nav-link"
             >Casos de <span>Éxito</span></a
           >
           <a href="/blog" class="text-deepdark-900 font-semibold nav-link"
             >Blog</a
           >
-          <a href="/contact" class="text-deepdark-900 font-semibold">Contacto</a
+          <a href="/contacto" class="text-deepdark-900 font-semibold"
+            >Contacto</a
           >
         </div>
       </div>
