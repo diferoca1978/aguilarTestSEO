@@ -26,13 +26,15 @@ const jsonLdSchemas = [ORGANIZATION_SCHEMA, WEBSITE_SCHEMA];
 ---
 
 <MainLayout title=" Abogados de seguros Aguilar & abogados asociados">
-  <SEO {...seoProps} />
-  <!-- JSON-LD Structured Data -->
-  {
-    jsonLdSchemas.map((schema) => (
-      <script type="application/ld+json" set:html={JSON.stringify(schema)} />
-    ))
-  }
+  <fragment slot="head">
+    <SEO {...seoProps} />
+    <!-- JSON-LD Structured Data -->
+    {
+      jsonLdSchemas.map((schema) => (
+        <script type="application/ld+json" set:html={JSON.stringify(schema)} />
+      ))
+    }
+  </fragment>
 
   <!-- Sections -->
   <HeroSection />
