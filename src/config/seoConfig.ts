@@ -5,7 +5,7 @@ import type { SEOProps } from 'astro-seo';
 export const COMPANY_INFO = {
   name: 'Aguilar & Abogados Asociados',
   description: 'Firma legal especializada en derecho de seguros que brinda asesoría y representación jurídica tanto a personas como a empresas en Colombia.',
-  url: 'https://example.com', // Replace with your actual domain
+  url: 'https://aguilartest.netlify.app/', // Replace with your actual domain
   phone: '+57-301-551-1676', // Replace with actual phone
   email: 'alejandro.aguilar@aguilarabogadosasociados.co', // Replace with actual email
   address: {

@@ -14,6 +14,6 @@ export default defineConfig({
   // base: "/prueba/",
   // trailingSlash: "always",
   // output: "static",
-  site: "http://localhost:4321/",
+  site: "https://aguilartest.netlify.app/",
   integrations: [sitemap()]
 });
