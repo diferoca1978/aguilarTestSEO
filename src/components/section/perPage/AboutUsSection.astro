@@ -1,6 +1,9 @@
 ---
 import { Image } from "astro:assets";
 import lawyerImage from "@/assets/images/lawyer.webp";
+import alejoImage from "@/assets/images/alejo.webp";
+import alejo3Image from "@/assets/images/alejo3.png";
+import alejo2Image from "@/assets/images/alejo2.webp";
 import QuoteSvg from "@/assets/icons/quote.svg";
 import TargetArrowSvg from "@/assets/icons/target-arrow.svg";
 import ScheduleSvg from "@/assets/icons/schedule.svg";
@@ -9,25 +12,29 @@ import LottoSvg from "@/assets/icons/lotto.svg";
 ---
 
 <section class="">
-    <div class="relative h-screen">
-        <Image
-            src={lawyerImage}
-            alt="Quiénes Somos Aguilar & Abogados"
-            class="absolute inset-0 w-full h-full object-cover"
-        />
-        <div class="absolute inset-0 bg-deepdark-950/50"></div>
+    <!-- Hero -->
+    <div class="relative h-[500px] md:h-screen overflow-hidden">
+        <div class="absolute inset-0 w-full h-full">
+            <Image
+                src={alejo3Image}
+                alt="Quiénes Somos Aguilar & Abogados"
+                class="w-full h-full object-cover object-[94%] md:object-center"
+            />
+        </div>
+        <div class="absolute inset-0 bg-deepdark-950/50 md:bg-transparent">
+        </div>
         <div
             class="relative z-10 px-5 flex items-center h-full md:px-6 lg:px-8 md:max-w-7xl mx-auto"
         >
-            <div class="max-w-3xl">
+            <div
+                class="absolute inset-0 top-[70%] transform -translate-y-[70%] left-[10%] md:left-5 md:top-[60%] md:transform md:-translate-y-[60%] max-w-3xl"
+            >
                 <h1
                     class="text-[min(10vw,64px)] font-bold text-softWhite-50 mb-4 leading-tight tracking-tight text-left"
                 >
                     Quiénes Somos
                 </h1>
-                <p
-                    class="prose text-softWhite-50 text-[min(6vw,18px)] text-left"
-                >
+                <p class="prose text-softWhite-50 text-[min(6vw,20px)]">
                     <span class="block">Conozca la historia de la firma</span>
                     <span class="block">que está detrás de su tranquilidad</span
                     >

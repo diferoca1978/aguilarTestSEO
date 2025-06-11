@@ -28,7 +28,6 @@ import MobileMenuCloseSvg from "@/assets/images/mobilemenuclose.svg";
           <MobileMenuSvg id="open-icon" width={32} height={32} />
 
           <!-- Close icon -->
-
           <MobileMenuCloseSvg
             class="hidden"
             id="close-icon"
@@ -44,9 +43,45 @@ import MobileMenuCloseSvg from "@/assets/images/mobilemenuclose.svg";
               class="flex space-x-1 text-deepdark-900 font-semibold nav-link"
               ><span>¿Quiénes</span> <span>Somos?</span></a
             >
-            <a href="/services" class="text-deepdark-900 font-semibold nav-link"
-              >Servicios</a
-            >
+            <!-- Servicios with click dropdown -->
+            <div class="relative">
+              <a
+                href="#"
+                id="servicios-toggle"
+                class="flex items-center text-deepdark-900 font-semibold nav-link cursor-pointer"
+              >
+                <span>Servicios</span>
+                <!-- Dropdown icon -->
+                <svg
+                  class="w-4 h-4 ml-1"
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M19 9l-7 7-7-7"></path>
+                </svg>
+              </a>
+              <div
+                id="servicios-dropdown"
+                class="absolute left-0 top-full mt-1 w-48 bg-softWhite-50 z-10 rounded-xl shadow-lg hidden"
+              >
+                <a
+                  href="#"
+                  class="block px-4 py-2 text-deepdark-900 hover:bg-gold-100 hover:rounded-xl transition"
+                  >Empresas</a
+                >
+                <a
+                  href="#"
+                  class="block px-4 py-2 text-deepdark-900 hover:bg-gold-100 hover:rounded-xl transition"
+                  >Personas</a
+                >
+              </div>
+            </div>
             <a
               href="/successCases"
               class="text-deepdark-900 font-semibold nav-link"
@@ -57,7 +92,7 @@ import MobileMenuCloseSvg from "@/assets/images/mobilemenuclose.svg";
             >
             <button
               type="button"
-              class="text-deepdark-900 font-semibold border border-darkGray-200 rounded-lg px-4 py-1 hover:bg-gold-400 hover:text-softWhite-50 hover:border-softWhite-50 transition duration-300"
+              class="text-deepdark-900 font-semibold border border-darkGray-200 rounded-xl px-4 py-1 hover:bg-gold-400 hover:text-softWhite-50 hover:border-softWhite-50 transition duration-300"
             >
               <a href="/contact">Contacto</a></button
             >
@@ -66,15 +101,42 @@ import MobileMenuCloseSvg from "@/assets/images/mobilemenuclose.svg";
       </div>
       <!-- Mobile menu -->
       <div
-        class="mobile-menu md:hidden absolute top-[152px] bg-softWhite-50 right-0 px-2 rounded-xl"
+        class="mobile-menu md:hidden absolute top-[152px] bg-softWhite-50 right-0 px-2 rounded-2xl"
       >
         <div class="flex flex-col items-end pr-7 space-y-4 mt-2">
           <a href="/aboutUs" class="text-deepdark-900 font-semibold nav-link"
             >¿Quiénes <span>Somos?</span></a
           >
-          <a href="/services" class="text-deepdark-900 font-semibold nav-link"
-            >Servicios</a
-          >
+          <!-- Servicios mobile indent with toggle -->
+          <div class="flex flex-col items-end">
+            <a
+              href="#"
+              id="mobile-servicios-toggle"
+              class="flex items-center text-deepdark-900 font-semibold nav-link cursor-pointer"
+            >
+              <span>Servicios</span>
+              <svg
+                class="w-4 h-4 ml-1"
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M19 9l-7 7-7-7"></path>
+              </svg>
+            </a>
+            <div
+              id="mobile-servicios-dropdown"
+              class="items-end ml-4 mt-1 space-y-2 hidden"
+            >
+              <a href="#" class="text-deepdark-950 nav-link block">Empresas</a>
+              <a href="#" class="text-deepdark-950 nav-link block">Personas</a>
+            </div>
+          </div>
           <a
             href="/successCases"
             class="text-deepdark-900 font-semibold nav-link"
@@ -103,16 +165,21 @@ import MobileMenuCloseSvg from "@/assets/images/mobilemenuclose.svg";
 </style>
 
 <script>
+  // Mobile menu toggle
   const btn = document.querySelector(
     "button.open-mobile-menu",
   ) as HTMLButtonElement;
   const menu = document.querySelector(".mobile-menu") as HTMLDivElement;
   const openIcon = document.querySelector("#open-icon") as HTMLElement;
   const closeIcon = document.querySelector("#close-icon") as HTMLElement;
+  btn.addEventListener("click", () => {
+    menu.classList.toggle("open");
+    openIcon.classList.toggle("hidden");
+    closeIcon.classList.toggle("hidden");
+  });
 
+  // Active link highlight
   const currentPath = window.location.pathname;
-  console.log("Current Path:", currentPath);
-
   const links = document.querySelectorAll(".nav-link");
   links.forEach((link) => {
     if (link.getAttribute("href") === currentPath) {
@@ -122,15 +189,36 @@ import MobileMenuCloseSvg from "@/assets/images/mobilemenuclose.svg";
     }
   });
 
-  btn.addEventListener("click", () => {
-    menu.classList.toggle("open");
-    openIcon.classList.toggle("hidden");
-    closeIcon.classList.toggle("hidden");
+  // Servicios desktop dropdown click
+  const serviciosToggle = document.querySelector(
+    "#servicios-toggle",
+  ) as HTMLButtonElement;
+  const serviciosDropdown = document.querySelector(
+    "#servicios-dropdown",
+  ) as HTMLDivElement;
+  serviciosToggle.addEventListener("click", (e) => {
+    e.preventDefault();
+    serviciosDropdown.classList.toggle("hidden");
+  });
+  serviciosDropdown.addEventListener("mouseleave", (e) => {
+    e.preventDefault();
+    serviciosDropdown.classList.add("hidden");
+  });
+
+  // Servicios mobile dropdown click
+  const mobileServiciosToggle = document.querySelector(
+    "#mobile-servicios-toggle",
+  ) as HTMLButtonElement;
+  const mobileServiciosDropdown = document.querySelector(
+    "#mobile-servicios-dropdown",
+  ) as HTMLDivElement;
+  mobileServiciosToggle.addEventListener("click", (e) => {
+    e.preventDefault();
+    mobileServiciosDropdown.classList.toggle("hidden");
   });
 </script>
 
 <script>
   import { navBarAnimation } from "@/scripts/gsap/navAnimation";
-
   navBarAnimation();
 </script>
