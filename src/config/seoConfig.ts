@@ -27,12 +27,12 @@ export const COMPANY_INFO = {
 
 // Default SEO configuration
 export const DEFAULT_SEO: SEOProps = {
-  title: 'Aguilar & Abogados Asociados | Especialistas en Derecho de Seguros',
+  title: 'Aguilar & Abogados Asociados | Expertos en Derecho de Seguros',
   description: 'Firma legal especializada en derecho de seguros en Colombia. Defendemos sus derechos ante aseguradoras con transparencia, efectividad y compromiso.',
   canonical: COMPANY_INFO.url,
   openGraph: {
     basic: {
-      title: 'Aguilar & Abogados Asociados | Especialistas en Derecho de Seguros',
+      title: 'Aguilar & Abogados Asociados | Expertos en Derecho de Seguros',
       type: 'website',
       image: COMPANY_INFO.url + COMPANY_INFO.image,
       url: COMPANY_INFO.url

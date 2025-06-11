@@ -1,19 +1,20 @@
 ---
-import LogoSvg from "@/assets/images/logo.svg";
+import LogoSvg from "@/assets/images/logoBlackLetters.png";
 import MobileMenuSvg from "@/assets/images/mobilemenu.svg";
 import MobileMenuCloseSvg from "@/assets/images/mobilemenuclose.svg";
+import { Image } from "astro:assets";
 ---
 
 <!-- Logo -->
 <header
   class="fixed top-0 left-0 right-0 bg-softWhite-50 z-50 w-full flex flex-wrap md:flex-nonwrap main-header"
 >
-  <nav class="w-full h-[170px] mx-auto md:max-w-7xl nav-bar">
+  <nav class="w-full mx-auto md:max-w-7xl nav-bar">
     <div class="flex justify-between items-center px-5">
       <!-- Logo -->
       <div>
         <a href="/">
-          <LogoSvg width={250} height={170} class="logo" />
+          <Image src={LogoSvg} alt="Logo" class="w-48" />
           <span class="sr-only">Logo</span>
         </a>
       </div>
@@ -167,7 +168,7 @@ import MobileMenuCloseSvg from "@/assets/images/mobilemenuclose.svg";
 <script>
   // Mobile menu toggle
   const btn = document.querySelector(
-    "button.open-mobile-menu",
+    "button.open-mobile-menu"
   ) as HTMLButtonElement;
   const menu = document.querySelector(".mobile-menu") as HTMLDivElement;
   const openIcon = document.querySelector("#open-icon") as HTMLElement;
@@ -179,22 +180,24 @@ import MobileMenuCloseSvg from "@/assets/images/mobilemenuclose.svg";
   });
 
   // Active link highlight
-  const currentPath = window.location.pathname;
-  const links = document.querySelectorAll(".nav-link");
-  links.forEach((link) => {
-    if (link.getAttribute("href") === currentPath) {
-      link.classList.add("text-gold-500");
-    } else {
-      link.classList.remove("text-gold-500");
-    }
+  document.addEventListener("DOMContentLoaded", () => {
+    const currentPath = window.location.pathname;
+    const links = document.querySelectorAll(".nav-link");
+    links.forEach((link) => {
+      if (link.getAttribute("href") === currentPath) {
+        link.classList.add("text-gold-500");
+      } else {
+        link.classList.remove("text-gold-500");
+      }
+    });
   });
 
   // Servicios desktop dropdown click
   const serviciosToggle = document.querySelector(
-    "#servicios-toggle",
+    "#servicios-toggle"
   ) as HTMLButtonElement;
   const serviciosDropdown = document.querySelector(
-    "#servicios-dropdown",
+    "#servicios-dropdown"
   ) as HTMLDivElement;
   serviciosToggle.addEventListener("click", (e) => {
     e.preventDefault();
@@ -207,10 +210,10 @@ import MobileMenuCloseSvg from "@/assets/images/mobilemenuclose.svg";
 
   // Servicios mobile dropdown click
   const mobileServiciosToggle = document.querySelector(
-    "#mobile-servicios-toggle",
+    "#mobile-servicios-toggle"
   ) as HTMLButtonElement;
   const mobileServiciosDropdown = document.querySelector(
-    "#mobile-servicios-dropdown",
+    "#mobile-servicios-dropdown"
   ) as HTMLDivElement;
   mobileServiciosToggle.addEventListener("click", (e) => {
     e.preventDefault();
@@ -218,7 +221,7 @@ import MobileMenuCloseSvg from "@/assets/images/mobilemenuclose.svg";
   });
 </script>
 
-<script>
+<!-- <script>
   import { navBarAnimation } from "@/scripts/gsap/navAnimation";
   navBarAnimation();
-</script>
+</script> -->

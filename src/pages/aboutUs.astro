@@ -17,13 +17,15 @@ const jsonLdSchemas = [ORGANIZATION_SCHEMA];
 ---
 
 <MainLayout title="Quiénes somos">
-  <SEO {...seoProps} />
+  <fragment slot="head">
+    <SEO {...seoProps} />
 
-  {
-    jsonLdSchemas.map((schema) => (
-      <script type="application/ld+json" set:html={JSON.stringify(schema)} />
-    ))
-  }
+    {
+      jsonLdSchemas.map((schema) => (
+        <script type="application/ld+json" set:html={JSON.stringify(schema)} />
+      ))
+    }
+  </fragment>
 
   <AboutUsSection />
   <WhyChooseUsSection />
