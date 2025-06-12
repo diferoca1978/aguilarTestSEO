@@ -2,7 +2,8 @@
 import LogoSvg from "@/assets/images/logoblackletters.svg";
 import MobileMenuSvg from "@/assets/images/mobilemenu.svg";
 import MobileMenuCloseSvg from "@/assets/images/mobilemenuclose.svg";
-import { Image } from "astro:assets";
+
+const currentPath = Astro.url.pathname;
 ---
 
 <!-- Logo -->
@@ -174,6 +175,22 @@ import { Image } from "astro:assets";
   }
 </style>
 
+<script is:inline define:vars={{ currentPath }}>
+  function highlightActiveLink() {
+    const links = document.querySelectorAll(".nav-link");
+    links.forEach((link) => {
+      if (link.getAttribute("href") === currentPath) {
+        link.classList.add("text-gold-500");
+      } else {
+        link.classList.remove("text-gold-500");
+      }
+    });
+  }
+
+  // highlight active link on load
+  highlightActiveLink();
+</script>
+
 <script>
   // Mobile menu toggle
   const btn = document.querySelector(
@@ -186,19 +203,6 @@ import { Image } from "astro:assets";
     menu.classList.toggle("open");
     openIcon.classList.toggle("hidden");
     closeIcon.classList.toggle("hidden");
-  });
-
-  // Active link highlight
-  document.addEventListener("DOMContentLoaded", () => {
-    const currentPath = window.location.pathname;
-    const links = document.querySelectorAll(".nav-link");
-    links.forEach((link) => {
-      if (link.getAttribute("href") === currentPath) {
-        link.classList.add("text-gold-500");
-      } else {
-        link.classList.remove("text-gold-500");
-      }
-    });
   });
 
   // Servicios desktop dropdown click

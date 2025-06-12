@@ -1,9 +1,9 @@
 ---
 import { SEO } from "astro-seo";
+import { generatePageSEO } from "@/config/seoConfig";
 import MainLayout from "@/layouts/MainLayout.astro";
 import AboutUsSection from "@/components/section/perPage/AboutUsSection.astro";
 import WhyChooseUsSection from "@/components/section/perPage/WhyChooseUs.astro";
-import { generatePageSEO } from "@/config/seoConfig";
 
 const seoProps = generatePageSEO({
   title: "Quiénes somos",

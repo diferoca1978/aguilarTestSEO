@@ -1,8 +1,21 @@
 ---
+import { SEO } from "astro-seo";
+import { generatePageSEO } from "@/config/seoConfig";
 import MainLayout from "@/layouts/MainLayout.astro";
 import ServicesForPeople from "@/components/section/perPage/ServicesForPeople.astro";
+
+const seoProps = generatePageSEO({
+    title: "Servicios Legales en Seguros | Aguilar & Abogados Asociados",
+    description:
+        "Expertos en derecho de seguros. Soluciones legales para reclamaciones denegadas, retrasos en indemnizaciones y asesoría especializada. Más de 15 años protegiendo sus derechos ante aseguradoras. Primera consulta sin costo.",
+    path: "/serviciosPersonas",
+    image: "/assets/images/og-image.png",
+});
 ---
 
-<MainLayout title="Servicios para personas | Aguilar & abogados asociados">
+<MainLayout title="Servicios Legales en Seguros | Aguilar & Abogados Asociados">
+    <Fragment slot="head">
+        <SEO {...seoProps} />
+    </Fragment>
     <ServicesForPeople />
 </MainLayout>
