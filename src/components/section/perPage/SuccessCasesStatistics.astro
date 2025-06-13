@@ -1,45 +1,36 @@
 ---
-import PlusSvg from "@/assets/icons/plus.svg";
+import { Image } from "astro:assets";
+import heroSuccessCasesStatistics from "@/assets/images/herosuccesscases.webp";
 ---
 
-<section class="mx-auto mt-16 md:mt-20">
-    <div class="flex flex-col items-center px-4 sm:px-5 lg:px-10">
-        <!-- Statistics -->
-        <div
-            class="max-w-7xl flex flex-col items-center md:flex-row md:justify-between gap-5"
+<section class="relative h-[80vh] md:h-screen">
+    <!-- 1. Background image -->
+    <Image
+        src={heroSuccessCasesStatistics}
+        alt="Fondo Hero Aguilar & Abogados"
+        class="absolute inset-0 w-full h-full object-cover"
+    />
+
+    <!-- 2. Transparent overlay to improve contrast -->
+    <div class="absolute inset-0 bg-deepdark-950/60"></div>
+
+    <!-- 3. Centered to left container for text -->
+    <div
+        class="relative z-10 flex flex-col justify-center px-4 top-[12%] md:left-[10%] md:top-0 md:px-6 lg:px-8 h-full"
+    >
+        <!-- Main title -->
+        <h1
+            class="text-[min(10vw,64px)] font-bold text-softWhite-50 mb-4 leading-tight tracking-tight"
         >
-            <div class="flex flex-col gap-3 mb-5">
-                <h1
-                    class="text-[min(10vw,32px)] font-bold text-deepdark-900 leading-tight tracking-tight"
-                >
-                    ¿La aseguradora negó su reclamo?
-                </h1>
-                <h1
-                    class="text-[min(10vw,32px)] font-bold text-deepdark-900 leading-tight tracking-tight"
-                >
-                    ¿No responden a sus solicitudes?
-                </h1>
-                <h1
-                    class="text-[min(10vw,32px)] font-bold text-deepdark-900 leading-tight tracking-tight"
-                >
-                    Nosotros luchamos por lo que
-                    <span class="block">le corresponde.</span>
-                </h1>
-            </div>
-            <div class="flex flex-col p-10 items-center justify-center">
-                <div class="flex items-center gap-3">
-                    <PlusSvg width={100} height={100} />
-                    <p
-                        class="text-[min(10vw,62px)] font-extrabold text-gold-400 number"
-                    >
-                        100
-                    </p>
-                </div>
-                <h1 class="block text-[min(10vw,32px)] font-bold text-gold-400">
-                    Casos resueltos
-                </h1>
-            </div>
-        </div>
+            Nosotros luchamos <span class="block"
+                >por lo que le corresponde</span
+            >
+        </h1>
+
+        <!-- Subtitle (two lines) -->
+        <p class="text-softWhite-50 mb-6 max-w-2xl">
+            Conozca aqui nuestros casos de éxito
+        </p>
     </div>
 </section>
 

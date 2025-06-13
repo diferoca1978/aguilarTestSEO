@@ -1,9 +1,7 @@
 ---
 import { Image } from "astro:assets";
-import lawyerImage from "@/assets/images/lawyer.webp";
-import alejoImage from "@/assets/images/alejo.webp";
 import alejo3Image from "@/assets/images/alejo3.png";
-import alejo2Image from "@/assets/images/alejo2.webp";
+import alejoMobileImage from "@/assets/images/alejandromobile.webp";
 import QuoteSvg from "@/assets/icons/quote.svg";
 import TargetArrowSvg from "@/assets/icons/target-arrow.svg";
 import ScheduleSvg from "@/assets/icons/schedule.svg";
@@ -11,20 +9,26 @@ import SearchSvg from "@/assets/icons/search.svg";
 import LottoSvg from "@/assets/icons/lotto.svg";
 ---
 
-<section class="">
+<section class="mt-[130px] md:mt-0">
     <!-- Hero -->
-    <div class="relative h-[500px] md:h-screen overflow-hidden">
-        <div class="absolute inset-0 w-full h-full">
-            <Image
-                src={alejo3Image}
-                alt="Quiénes Somos Aguilar & Abogados"
-                class="w-full h-full object-cover object-[94%] md:object-center"
-            />
-        </div>
+    <div class="relative h-[80vh] md:h-screen">
+        <!-- 1. Background image -->
+        <Image
+            src={alejo3Image}
+            alt="Quiénes Somos Aguilar & Abogados"
+            class="hidden absolute inset-0 w-full h-full object-cover object-[90%] md:object-center md:block"
+        />
+        <Image
+            src={alejoMobileImage}
+            alt="Fondo Hero Aguilar & Abogados"
+            class="absolute inset-0 w-full h-full object-cover md:hidden"
+        />
+        <!-- 2. Transparent overlay to improve contrast -->
         <div class="absolute inset-0 bg-deepdark-950/50 md:bg-transparent">
         </div>
+        <!-- 3. Centered to left container for text -->
         <div
-            class="relative z-10 px-5 flex items-center h-full md:px-6 lg:px-8 md:max-w-7xl mx-auto"
+            class="relative z-10 flex flex-col justify-center px-4 top-[12%] md:left-[10%] md:top-0 md:px-6 lg:px-8 h-full"
         >
             <div
                 class="absolute inset-0 top-[70%] transform -translate-y-[70%] left-[10%] md:left-5 md:top-[60%] md:transform md:-translate-y-[60%] max-w-3xl"
