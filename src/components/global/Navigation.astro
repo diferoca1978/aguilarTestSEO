@@ -103,9 +103,11 @@ const currentPath = Astro.url.pathname;
       </div>
       <!-- Mobile menu -->
       <div
-        class="mobile-menu md:hidden absolute top-[130px] bg-softWhite-50 right-0 px-2 rounded-2xl"
+        class="mobile-menu md:hidden absolute top-[130px] bg-softWhite-50 right-0 px-2 rounded-b-lg shadow-lg"
       >
-        <div class="flex flex-col items-end pr-7 space-y-4 mt-2">
+        <div
+          class="flex flex-col justify-center items-center py-5 space-y-4 mt-2"
+        >
           <a
             href="/quienesSomos"
             class="text-deepdark-900 font-semibold nav-link"
@@ -167,11 +169,17 @@ const currentPath = Astro.url.pathname;
   .mobile-menu {
     max-height: 0;
     overflow: hidden;
-    transition: max-height 0.5s ease-out;
+    width: 0;
+    transition:
+      max-height 0.5s ease-out,
+      width 0.5s ease-out;
   }
   .mobile-menu.open {
     max-height: 1000px;
-    transition: max-height 0.8s ease-in;
+    width: 100%;
+    transition:
+      max-height 0.8s ease-in,
+      width 0.5s ease-in;
   }
 </style>
 
