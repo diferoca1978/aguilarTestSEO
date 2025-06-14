@@ -1,0 +1,52 @@
+<section class="max-w-7xl mx-auto my-12">
+    <div class="flex flex-col items-center">
+        <div
+            class="flex flex-col items-center px-4 md:flex-row gap-5"
+            id="successStatistics"
+        >
+            <div class="flex flex-col items-center">
+                <h1
+                    class="text-[min(10vw,64px)] font-bold text-deepdark-900 leading-tight tracking-tight"
+                >
+                    Más de
+                </h1>
+                <h1
+                    class="text-[min(10vw,64px)] font-bold text-deepdark-900 leading-tight tracking-tight"
+                >
+                    <span id="number1">53</span>
+                </h1>
+                <p
+                    class="text-[min(6vw,20px)] text-center text-deepdark-900 leading-tight tracking-tight"
+                >
+                    cásos resueltos <span class="block">satisfactoriamente</span
+                    >
+                </p>
+            </div>
+            <div class="hidden md:block h-40 w-px bg-quill-gray-500 mx-4"></div>
+            <div class="flex flex-col items-center">
+                <h1
+                    class="text-[min(10vw,64px)] font-bold text-deepdark-900 leading-tight tracking-tight"
+                >
+                    $
+                    <span id="number2">3.800</span>
+                </h1>
+                <h1
+                    class="text-[min(10vw,64px)] font-bold text-deepdark-900 leading-tight tracking-tight"
+                >
+                    millones
+                </h1>
+                <p
+                    class="text-[min(6vw,20px)] text-deepdark-900 leading-tight tracking-tight"
+                >
+                    recuperados para <span class="block">nuestros clientes</span
+                    >
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<script>
+    import { numberAnimation } from "@/scripts/gsap/numberAnimation";
+    numberAnimation();
+</script>
