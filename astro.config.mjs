@@ -11,6 +11,14 @@ export default defineConfig({
     plugins: [tailwindcss()],
     
   },
+  server: {
+    allowedHosts: [
+      "localhost",
+      "127.0.0.1", 
+      ".trycloudflare.com"
+    ],
+  },
+  
   // base: "/prueba/",
   // trailingSlash: "always",
   // output: "static",

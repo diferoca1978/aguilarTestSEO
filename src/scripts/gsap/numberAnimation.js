@@ -30,7 +30,6 @@ export const numberAnimation = () => {
             trigger: container,
             start: "top 80%",
             end: "top 110%",
-            markers: true,
             toggleActions: "play none none reverse"
         }
     });
