@@ -1,14 +1,33 @@
 ---
+import { SEO } from "astro-seo";
+import { generatePageSEO } from "@/config/seoConfig";
 import MainLayout from "@/layouts/MainLayout.astro";
 import SuccessCasesHero from "@/components/section/perPage/SuccessCasesHero.astro";
 import SucccessStatistics from "@/components/section/perPage/SucccessStatistics.astro";
 import SuccessCasesYoutube from "@/components/section/perPage/SuccessCasesYoutube.astro";
 import SucccesCasesGoogle from "@/components/section/perPage/SucccesCasesGoogle.astro";
+import CtaBanner from "@/components/global/CtaBanner.astro";
+
+const seoProps = generatePageSEO({
+  title: "Casos de Éxito | Aguilar & Abogados Asociados",
+  description:
+    "Conozca casos reales de éxito en reclamos de seguros. Hemos ayudado a mas de 53 clientes a obtener la compensación que merecen. Más de 15 años de experiencia en derecho de seguros respaldan nuestros resultados.",
+  path: "/casosDeExito",
+  image: "/assets/images/og-image.png",
+});
 ---
 
 <MainLayout title="Casos de Éxito">
+  <Fragment slot="head">
+    <SEO {...seoProps} />
+  </Fragment>
   <SuccessCasesHero />
   <SucccessStatistics />
-  <SuccessCasesYoutube />
   <SucccesCasesGoogle />
+  <SuccessCasesYoutube />
+  <CtaBanner
+    title="Queremos conocer su caso"
+    subtitle="Consulte sin costo"
+    ctaText="Agende una llamada"
+  />
 </MainLayout>

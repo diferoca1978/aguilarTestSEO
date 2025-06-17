@@ -4,6 +4,7 @@ import { generatePageSEO } from "@/config/seoConfig";
 import MainLayout from "@/layouts/MainLayout.astro";
 import AboutUsSection from "@/components/section/perPage/AboutUsSection.astro";
 import WhyChooseUsSection from "@/components/section/perPage/WhyChooseUs.astro";
+import CtaBanner from "@/components/global/CtaBanner.astro";
 
 const seoProps = generatePageSEO({
   title: "Quiénes somos",
@@ -20,4 +21,9 @@ const seoProps = generatePageSEO({
   </Fragment>
   <AboutUsSection />
   <WhyChooseUsSection />
+  <CtaBanner
+    title="Queremos conocer su caso"
+    subtitle="Consulte sin costo"
+    ctaText="Agende una llamada"
+  />
 </MainLayout>
