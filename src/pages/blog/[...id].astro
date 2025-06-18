@@ -1,0 +1,123 @@
+---
+import { SEO } from "astro-seo";
+import { getCollection, render } from "astro:content";
+import {
+    generatePageSEO,
+    generateBlogPostSchema,
+    generateBreadcrumbSchema,
+} from "@/config/seoConfig";
+import MarkdownPostLayout from "@/layouts/MarkdownPostLayout.astro";
+import Prose from "@/components/Prose.astro";
+import { getReadingTime } from "@/utils/readingTime";
+
+export const getStaticPaths = async () => {
+    const posts = await getCollection("blog");
+    return posts.map((post) => ({
+        params: { id: post.id },
+        props: { post },
+    }));
+};
+
+const { post } = Astro.props;
+const { data, id } = post;
+const { title, description, image, publishDate, tags } = data;
+
+const { Content } = await render(post);
+
+// Global SEO
+const seoProps = generatePageSEO({
+    title: "Blog | Aguilar Abogados Asociados",
+    description:
+        "Expertos en derecho de seguros. Soluciones legales para reclamaciones denegadas, retrasos en indemnizaciones y asesoría especializada. Más de 15 años protegiendo sus derechos ante aseguradoras. Primera consulta sin costo.",
+    path: `/blog/${id}`,
+    image: "/assets/images/og-image.png",
+});
+
+// Schema to blog post
+const blogPostSchema = generateBlogPostSchema({
+    title,
+    description,
+    image,
+    publishDate,
+    tags,
+    id,
+});
+
+// Schema to breadcrumb
+const breadcrumbSchema = generateBreadcrumbSchema([
+    { name: "Home", url: "/" },
+    { name: "Blog", url: "/blog" },
+    { name: title, url: `/blog/${id}` },
+]);
+
+const readingTime = post.body ? getReadingTime(post.body) : "";
+console.log(readingTime);
+---
+
+<MarkdownPostLayout title="Blog | Aguilar Abogados Asociados">
+    <Fragment slot="head">
+        <SEO {...seoProps} />
+    </Fragment>
+    <script
+        type="application/ld+json"
+        set:html={JSON.stringify(blogPostSchema)}
+    />
+    <script
+        type="application/ld+json"
+        set:html={JSON.stringify(breadcrumbSchema)}
+    />
+
+    <article class="container mt-[130px] md:mt-0 mx-auto px-2 py-8 md:py-16">
+        <nav
+            class="max-w-4xl px-4 pt-6 sm:px-6 lg:px-8 mx-auto"
+            aria-label="Breadcrumb"
+        >
+            <ol class="flex items-center space-x-2 text-sm text-gray-600">
+                <li>
+                    <a
+                        href="/"
+                        class="hover:text-deepdark-900 text-[min(5vw,16px)] transition-colors"
+                        >Inicio</a
+                    >
+                </li>
+                <li class="text-deepdark-500">/</li>
+                <li>
+                    <a
+                        href="/blog"
+                        class="hover:text-deepdark-900 text-[min(5vw,16px)] transition-colors"
+                        >Blog</a
+                    >
+                </li>
+                <li class="text-deepdark-500">/</li>
+                <li
+                    class="text-deepdark-900 text-[min(5vw,16px)] font-bold"
+                    aria-current="page"
+                >
+                    Artículo
+                </li>
+            </ol>
+        </nav>
+        <div class="max-w-4xl px-2 pt-6 lg:pt-10 pb-12 sm:px-6 lg:px-8 mx-auto">
+            <div class="space-y-5 md:space-y-8">
+                <h1 class="text-center font-bold mb-5 text-[min(6vw,36px)]">
+                    {title}
+                </h1>
+                <p
+                    class="text-[min(5vw,20px)] text-balance text-center text-deepdark-900"
+                >
+                    {description}
+                </p>
+
+                <div class="flex space-x-2">
+                    <span class="text-deepdark-500 text-sm"
+                        >Publicado el: {publishDate.toLocaleDateString()}</span
+                    >
+                    <span class="text-deepdark-500 text-sm">{readingTime}</span>
+                </div>
+            </div>
+            <Prose>
+                <Content />
+            </Prose>
+        </div>
+    </article>
+</MarkdownPostLayout>

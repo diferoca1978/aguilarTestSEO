@@ -356,33 +356,25 @@ export const BLOG_SCHEMA = {
 export function generateBlogPostSchema(post: {
   title: string;
   description: string;
-  slug: string;
   publishDate: Date;
-  updateDate?: Date;
-  author?: string;
   tags?: string[];
-  image?: string;
+  image: string;
+  id: string;
 }) {
   return {
     '@context': 'https://schema.org',
     '@type': 'BlogPosting',
-    '@id': `${COMPANY_INFO.url}/blog/${post.slug}#article`,
+    '@id': `${COMPANY_INFO.url}/blog/${post.id}#article`,
     headline: post.title,
     description: post.description,
-    url: `${COMPANY_INFO.url}/blog/${post.slug}`,
+    url: `${COMPANY_INFO.url}/blog/${post.id}`,
     datePublished: post.publishDate.toISOString(),
-    dateModified: (post.updateDate || post.publishDate).toISOString(),
-    author: {
-      '@type': 'Organization',
-      name: post.author || COMPANY_INFO.name,
-      url: COMPANY_INFO.url
-    },
     publisher: {
       '@id': COMPANY_INFO.url + '#organization'
     },
     mainEntityOfPage: {
       '@type': 'WebPage',
-      '@id': `${COMPANY_INFO.url}/blog/${post.slug}`
+      '@id': `${COMPANY_INFO.url}/blog/${post.id}`
     },
     image: post.image ? COMPANY_INFO.url + post.image : COMPANY_INFO.url + COMPANY_INFO.image,
     keywords: post.tags?.join(', ') || 'derecho seguros, asesoría legal',

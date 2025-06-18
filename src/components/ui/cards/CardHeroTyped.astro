@@ -1,0 +1,52 @@
+---
+import { Image } from "astro:assets";
+import type { CollectionEntry } from "astro:content";
+import { getReadingTime } from "@/utils/readingTime";
+
+interface Props {
+    post: CollectionEntry<"blog">;
+}
+
+const { post } = Astro.props;
+const { data, id } = post;
+const { title, description, image, publishDate, tags } = data;
+
+const readingTime = post.body ? getReadingTime(post.body) : "";
+---
+
+<article>
+    <!-- From Uiverse.io by YeiserBytes -->
+    <a
+        href={`/blog/${id}`}
+        class="w-96 hover:scale-105 transition-transform duration-300 group p-5"
+    >
+        <figure class="overflow-hidden rounded-lg relative mb-1">
+            <Image
+                src={image}
+                alt={title}
+                class="object-cover object-center aspect-video"
+            />
+            <!-- <span
+                class="absolute top-2 left-2 px-3 py-1 bg-gray-950/20 backdrop-blur-sm text-xs rounded-full text-gray-50"
+                >Nature</span
+            > -->
+        </figure>
+        <time
+            datetime={publishDate.toISOString()}
+            class="text-xs text-deepdark-900"
+        >
+            {publishDate.toLocaleDateString()}
+            <span>⦁</span>
+            {readingTime}
+        </time>
+
+        <h2 class="text-xl text-pretty mt-2 text-deepdark-900">
+            {title}
+        </h2>
+        <p
+            class="line-clamp-2 text-sm text-deepdark-900 opacity-50 mt-1 group-hover:opacity-90 transition-opacity duration-300"
+        >
+            {description}
+        </p>
+    </a>
+</article>
