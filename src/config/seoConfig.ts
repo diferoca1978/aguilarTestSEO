@@ -358,7 +358,7 @@ export function generateBlogPostSchema(post: {
   description: string;
   publishDate: Date;
   tags?: string[];
-  image: string;
+  image: image.src;
   id: string;
 }) {
   return {

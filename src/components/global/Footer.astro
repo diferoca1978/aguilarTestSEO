@@ -2,6 +2,7 @@
 import { Image } from "astro:assets";
 
 import logo from "../../assets/images/logo.svg";
+import LogoShineSvg from "../../assets/images/LogoShine240x120px.svg";
 ---
 
 <section class="w-full border border-t-2 border-quill-gray-100">
@@ -22,11 +23,6 @@ import logo from "../../assets/images/logo.svg";
 
             <!-- Main-menu -->
             <div class="text-center">
-                <!-- Divider -->
-                <!-- <span class="flex mb-5 lg:mb-0">
-                    <span class="h-px flex-1 bg-quill-gray-100 lg:hidden"
-                    ></span>
-                </span> -->
                 <h2
                     class="mb-3 text-[min(6vw,20px)] text-deepdark-900 font-bold"
                 >
@@ -111,7 +107,7 @@ import logo from "../../assets/images/logo.svg";
                     <p
                         class="text-deepdark-900 text-[min(6vw,16px)] md:text-[min(6vw,18px)]"
                     >
-                        alejandro.aguilar@aguilarabogadosasociados.co
+                        contacto@aguilarabogadosasociados.com
                     </p>
                 </div>
                 <span class="flex mt-5">
@@ -128,6 +124,7 @@ import logo from "../../assets/images/logo.svg";
                 </h1>
                 <div class="flex justify-around items-center">
                     <a
+                        class="hover:scale-110 transition duration-400 ease-in-out"
                         href="https://www.instagram.com/aguilar_abogados_/"
                         target="_blank"
                     >
@@ -143,7 +140,11 @@ import logo from "../../assets/images/logo.svg";
                             ></path></svg
                         >
                     </a>
-                    <a href="#">
+                    <a
+                        class="hover:scale-110 transition duration-400 ease-in-out"
+                        href="https://www.linkedin.com/in/abogadoalejandroaguilar/"
+                        target="_blank"
+                    >
                         <svg
                             xmlns="http://www.w3.org/2000/svg"
                             width="24"
@@ -167,7 +168,10 @@ import logo from "../../assets/images/logo.svg";
                             </g>
                         </svg>
                     </a>
-                    <a href="#"
+                    <a
+                        class="hover:scale-110 transition duration-400 ease-in-out"
+                        href="https://www.facebook.com/profile.php?id=100064024895879"
+                        target="_blank"
                         ><svg
                             xmlns="http://www.w3.org/2000/svg"
                             width="24"
@@ -188,14 +192,19 @@ import logo from "../../assets/images/logo.svg";
     <span class="flex">
         <span class="h-px flex-1 bg-quill-gray-100"></span>
     </span>
-    <div class="my-1 flex justify-between items-center">
+    <div class="flex justify-center items-center">
+        <span class="text-deepdark-500 text-[min(4vw,12px)]">Creado por:</span>
+        <LogoShineSvg width={120} height={50} />
+    </div>
+    <div class="my-1 flex justify-around items-center p-5">
+        <a href="/cookiesPolicy" class="text-[min(4vw,12px)] text-deepdark-500"
+            >Política de Cookies</a
+        >
         <p class="text-[min(4vw,12px)] text-deepdark-500">
-            Aguilar & Abogados Asociados @2025 <span
-                >Todos los derechos reservados</span
-            >
+            @2025 Todos los derechos reservados Aguilar & Abogados Asociados
         </p>
-        <a href="#" class="text-[min(4vw,12px)] text-deepdark-500"
-            >Terminos y condiciones</a
+        <a href="/privacyPolicy" class="text-[min(4vw,12px)] text-deepdark-500"
+            >Política de Privacidad</a
         >
     </div>
 </section>
