@@ -51,17 +51,23 @@ const { title } = Astro.props;
     <Navigation />
     <main class="md:pt-[130px]">
         <div class="relative">
-            <div class="absolute inset-0 z-0">
-  <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
-    <defs>
-      <pattern id="lines-diagonal" width="20" height="20" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
-        <line x1="0" y1="0" x2="0" y2="20"
-              stroke="#64748b" stroke-width="1" opacity="0.25"/>
-      </pattern>
-    </defs>
-    <rect width="100%" height="100%" fill="url(#lines-diagonal)"/>
-  </svg>
-</div>
+            <div class="absolute inset-0 bg-gradient-to-br from-quill-gray-50 via-quill-gray-100 to-quill-gray-200"></div>
+              <div class="absolute inset-0 opacity-10">
+                <svg class="w-full h-full" xmlns="http://www.w3.org/2000/svg">
+                  <defs>
+                    <pattern
+                      id="diagLines"
+                      width="40" height="40"
+                      patternUnits="userSpaceOnUse"
+                      patternTransform="rotate(45)"
+                    >
+                      <!-- One white line per cell -->
+                      <line x1="0" y1="0" x2="0" y2="40" stroke="#202020" stroke-width="1"/>
+                    </pattern>
+                  </defs>
+                  <rect width="100%" height="100%" fill="url(#diagLines)" />
+                </svg>
+              </div>
             <div class="relative z-10 p-8">
                 <slot />
             </div>
