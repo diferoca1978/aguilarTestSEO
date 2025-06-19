@@ -3,9 +3,10 @@ interface Props {
     title: string;
     subtitle: string;
     ctaText: string;
+    href: string;
 }
 
-const { title, subtitle, ctaText } = Astro.props;
+const { title, subtitle, ctaText, href } = Astro.props;
 ---
 
 <div
@@ -19,7 +20,7 @@ const { title, subtitle, ctaText } = Astro.props;
 
     <div>
         <a
-            href="/contact"
+            href={href}
             class="inline-block px-4 py-2 rounded-xl bg-gradient-to-r from-gold-400 to-gold-500
       hover:from-gold-500 hover:to-gold-400 focus:outline-1
       text-softWhite-50 font-semibold text-lg

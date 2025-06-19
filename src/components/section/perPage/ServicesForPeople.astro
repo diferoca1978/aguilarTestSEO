@@ -15,339 +15,333 @@ import CtaBanner from "@/components/global/CtaBanner.astro";
 ---
 
 <section class="w-full mx-auto pt-[130px]">
-    <div class="flex flex-col items-center px-4 mt-12 md:mt-0 sm:px-5 lg:px-10">
-        <!-- Title -->
-        <h1
-            class="text-[min(10vw,52px)] font-bold text-deepdark-900 leading-tight tracking-tight text-center"
+  <div class="flex flex-col items-center px-4 mt-12 md:mt-0 sm:px-5 lg:px-10">
+    <!-- Title -->
+    <h1
+      class="text-[min(10vw,52px)] font-bold text-deepdark-900 leading-tight tracking-tight text-center"
+    >
+      Servicios para personas
+    </h1>
+
+    <p
+      class="prose max-w-3xl mx-auto text-[min(10vw,18px)] text-deepdark-900 text-center mt-4"
+    >
+      Aquí encontrará soluciones claras, acompañamiento experto y un equipo
+      dispuesto a defender sus derechos en cada paso. Explore a continuación
+      diferentes situaciones a las que se puede enfrentar y descubra cómo
+      podemos convertir su preocupación en tranquilidad legal.
+    </p>
+
+    <!-- First section -->
+
+    <div class="mt-12 max-w-7xl mx-auto">
+      <!-- Cards -->
+
+      <div
+        class="grid grid-cols-1 auto-rows-auto md:grid-cols-6 md:grid-rows-8 gap-2"
+      >
+        <a
+          href="/contacto"
+          class="md:col-span-2 md:row-span-4 service-card shadow-xl cursor-pointer shrink-0 py-8 px-6 rounded-2xl border border-deepdark-300 bg-softWhite-50 flex flex-col items-start gap-3 transition duration-500 ease-in group hover:md:bg-deepdark-950 hover:md:scale-95 hover:md:outline-2 hover:md:outline-gold-500"
         >
-            Servicios para personas
-        </h1>
+          <span class="sr-only">1</span>
 
-        <p
-            class="prose max-w-3xl mx-auto text-[min(10vw,18px)] text-deepdark-900 text-center mt-4"
+          <SinRespuesta
+            fill={"#202020"}
+            width={60}
+            height={60}
+            class="group-hover:md:fill-gold-400"
+          />
+
+          <h2
+            class="font-bold text-[min(10vw,22px)] group-hover:md:text-gold-400 text-deepdark-900"
+          >
+            Sin respuesta tras +30 días de reclamo
+          </h2>
+          <p
+            class="text-[min(10vw,18px)] text-deepdark-900 group-hover:md:text-softWhite-50 text-sm"
+          >
+            Forzamos contestación usando Derecho de Petición y/o queja ante la
+            Superfinanciera; si es necesario, demandamos.
+          </p>
+        </a>
+        <a
+          href="/contacto"
+          class="md:col-span-2 md:row-span-4 md:col-start-1 md:row-start-5 service-card shadow-xl cursor-pointer shrink-0 py-8 px-6 rounded-2xl border border-deepdark-300 bg-softWhite-50 flex flex-col items-start gap-3 transition duration-400 ease-in-out group hover:md:bg-deepdark-950 hover:md:scale-95 hover:md:outline-2 hover:md:outline-gold-500"
         >
-            Aquí encontrará soluciones claras, acompañamiento experto y un
-            equipo dispuesto a defender sus derechos en cada paso. Explore a
-            continuación diferentes situaciones a las que se puede enfrentar y
-            descubra cómo podemos convertir su preocupación en tranquilidad
-            legal.
-        </p>
+          <span class="sr-only">2</span>
+          <AseguradoraNegoIndemnizacion
+            fill={"#202020"}
+            width={60}
+            height={60}
+            class="group-hover:md:fill-gold-400"
+          />
 
-        <!-- First section -->
+          <h2
+            class="font-bold text-[min(10vw,22px)] group-hover:md:text-gold-400 text-deepdark-900"
+          >
+            La aseguradora negó su indemnización
+          </h2>
+          <p
+            class="text-[min(10vw,18px)] text-deepdark-900 group-hover:md:text-softWhite-50 text-sm"
+          >
+            Reabrimos el siniestro, aportamos pruebas sólidas y exigimos el pago
+            con intereses moratorios.
+          </p>
+        </a>
+        <a
+          href="/contacto"
+          class="md:col-span-2 md:row-span-5 md:col-start-3 md:row-start-1 service-card shadow-xl cursor-pointer shrink-0 py-8 px-6 rounded-2xl border border-deepdark-300 bg-softWhite-50 flex flex-col items-start gap-3 transition duration-400 ease-in-out group hover:md:bg-deepdark-950 hover:md:scale-95 hover:md:outline-2 hover:md:outline-gold-500"
+        >
+          <span class="sr-only">3</span>
+          <Nosabequecubre
+            fill={"#202020"}
+            width={60}
+            height={60}
+            class="group-hover:md:fill-gold-400"
+          />
 
-        <div class="mt-12 max-w-7xl mx-auto">
-            <!-- Cards -->
+          <h2
+            class="font-bold text-[min(10vw,22px)] group-hover:md:text-gold-400 text-deepdark-900"
+          >
+            No sabe qué cubre su póliza
+          </h2>
+          <p
+            class="text-[min(10vw,18px)] text-deepdark-900 group-hover:md:text-softWhite-50 text-sm"
+          >
+            Emitimos un concepto técnico-jurídico claro, señalamos coberturas y
+            exclusiones y trazamos el plan de acción.
+          </p>
+        </a>
+        <a
+          href="/contacto"
+          class="md:col-span-2 md:row-span-3 md:col-start-3 md:row-start-6 service-card shadow-xl cursor-pointer shrink-0 py-8 px-6 rounded-2xl border border-deepdark-300 bg-softWhite-50 flex flex-col items-start gap-3 transition duration-400 ease-in-out group hover:md:bg-deepdark-950 hover:md:scale-95 hover:md:outline-2 hover:md:outline-gold-500"
+        >
+          <span class="sr-only">4</span>
+          <RoboVehiculo
+            fill={"#202020"}
+            width={60}
+            height={60}
+            class="group-hover:md:fill-gold-400"
+          />
 
-            <div
-                class="grid grid-cols-1 auto-rows-auto md:grid-cols-6 md:grid-rows-8 gap-2"
-            >
-                <a
-                    href="/contacto"
-                    class="md:col-span-2 md:row-span-4 service-card shadow-xl cursor-pointer shrink-0 py-8 px-6 rounded-2xl border border-deepdark-300 bg-softWhite-50 flex flex-col items-start gap-3 transition duration-500 ease-in group hover:md:bg-deepdark-950 hover:md:scale-95 hover:md:outline-2 hover:md:outline-gold-500"
-                >
-                    <span class="sr-only">1</span>
+          <h2
+            class="font-bold text-[min(10vw,22px)] group-hover:md:text-gold-400 text-deepdark-900"
+          >
+            Robo de vehículo y la compañía no responde
+          </h2>
+          <p
+            class="text-[min(10vw,18px)] text-deepdark-900 group-hover:md:text-softWhite-50 text-sm"
+          >
+            Gestionamos la reclamación integral, recogemos pruebas y presentamos
+            demanda si procede.
+          </p>
+        </a>
+        <a
+          href="/contacto"
+          class="md:col-span-2 md:row-span-4 md:col-start-5 md:row-start-1 service-card shadow-xl cursor-pointer shrink-0 py-8 px-6 rounded-2xl border border-deepdark-300 bg-softWhite-50 flex flex-col items-start gap-3 transition duration-400 ease-in-out group hover:md:bg-deepdark-950 hover:md:scale-95 hover:md:outline-2 hover:md:outline-gold-500"
+        >
+          <span class="sr-only">5</span>
+          <ConsultaEscoltar
+            fill={"#202020"}
+            width={60}
+            height={60}
+            class="group-hover:md:fill-gold-400"
+          />
 
-                    <SinRespuesta
-                        fill={"#202020"}
-                        width={60}
-                        height={60}
-                        class="group-hover:md:fill-gold-400"
-                    />
+          <h2
+            class="font-bold text-[min(10vw,22px)] group-hover:md:text-gold-400 text-deepdark-900"
+          >
+            Consulta / acompañamiento especializado en derecho de seguros
+          </h2>
+          <p
+            class="text-[min(10vw,18px)] text-deepdark-900 group-hover:md:text-softWhite-50 text-sm"
+          >
+            Orientación 1-a-1 sobre trámites, documentos clave y plazos
+            críticos.
+          </p>
+        </a>
+        <a
+          href="/contacto"
+          class="md:col-span-2 md:row-span-4 md:col-start-5 md:row-start-5 service-card shadow-xl cursor-pointer shrink-0 py-8 px-6 rounded-2xl border border-deepdark-300 bg-softWhite-50 flex flex-col items-start gap-3 transition duration-400 ease-in-out group hover:md:bg-deepdark-950 hover:md:scale-95 hover:md:outline-2 hover:md:outline-gold-500"
+        >
+          <span class="sr-only">6</span>
+          <AccidenteTransito
+            fill={"#202020"}
+            width={60}
+            height={60}
+            class="group-hover:md:fill-gold-400"
+          />
 
-                    <h2
-                        class="font-bold text-[min(10vw,22px)] group-hover:md:text-gold-400 text-deepdark-900"
-                    >
-                        Sin respuesta tras +30 días de reclamo
-                    </h2>
-                    <p
-                        class="text-[min(10vw,18px)] text-deepdark-900 group-hover:md:text-softWhite-50 text-sm"
-                    >
-                        Forzamos contestación usando Derecho de Petición y/o
-                        queja ante la Superfinanciera; si es necesario,
-                        demandamos.
-                    </p>
-                </a>
-                <a
-                    href="/contacto"
-                    class="md:col-span-2 md:row-span-4 md:col-start-1 md:row-start-5 service-card shadow-xl cursor-pointer shrink-0 py-8 px-6 rounded-2xl border border-deepdark-300 bg-softWhite-50 flex flex-col items-start gap-3 transition duration-400 ease-in-out group hover:md:bg-deepdark-950 hover:md:scale-95 hover:md:outline-2 hover:md:outline-gold-500"
-                >
-                    <span class="sr-only">2</span>
-                    <AseguradoraNegoIndemnizacion
-                        fill={"#202020"}
-                        width={60}
-                        height={60}
-                        class="group-hover:md:fill-gold-400"
-                    />
-
-                    <h2
-                        class="font-bold text-[min(10vw,22px)] group-hover:md:text-gold-400 text-deepdark-900"
-                    >
-                        La aseguradora negó su indemnización
-                    </h2>
-                    <p
-                        class="text-[min(10vw,18px)] text-deepdark-900 group-hover:md:text-softWhite-50 text-sm"
-                    >
-                        Reabrimos el siniestro, aportamos pruebas sólidas y
-                        exigimos el pago con intereses moratorios.
-                    </p>
-                </a>
-                <a
-                    href="/contacto"
-                    class="md:col-span-2 md:row-span-5 md:col-start-3 md:row-start-1 service-card shadow-xl cursor-pointer shrink-0 py-8 px-6 rounded-2xl border border-deepdark-300 bg-softWhite-50 flex flex-col items-start gap-3 transition duration-400 ease-in-out group hover:md:bg-deepdark-950 hover:md:scale-95 hover:md:outline-2 hover:md:outline-gold-500"
-                >
-                    <span class="sr-only">3</span>
-                    <Nosabequecubre
-                        fill={"#202020"}
-                        width={60}
-                        height={60}
-                        class="group-hover:md:fill-gold-400"
-                    />
-
-                    <h2
-                        class="font-bold text-[min(10vw,22px)] group-hover:md:text-gold-400 text-deepdark-900"
-                    >
-                        No sabe qué cubre su póliza
-                    </h2>
-                    <p
-                        class="text-[min(10vw,18px)] text-deepdark-900 group-hover:md:text-softWhite-50 text-sm"
-                    >
-                        Emitimos un concepto técnico-jurídico claro, señalamos
-                        coberturas y exclusiones y trazamos el plan de acción.
-                    </p>
-                </a>
-                <a
-                    href="/contacto"
-                    class="md:col-span-2 md:row-span-3 md:col-start-3 md:row-start-6 service-card shadow-xl cursor-pointer shrink-0 py-8 px-6 rounded-2xl border border-deepdark-300 bg-softWhite-50 flex flex-col items-start gap-3 transition duration-400 ease-in-out group hover:md:bg-deepdark-950 hover:md:scale-95 hover:md:outline-2 hover:md:outline-gold-500"
-                >
-                    <span class="sr-only">4</span>
-                    <RoboVehiculo
-                        fill={"#202020"}
-                        width={60}
-                        height={60}
-                        class="group-hover:md:fill-gold-400"
-                    />
-
-                    <h2
-                        class="font-bold text-[min(10vw,22px)] group-hover:md:text-gold-400 text-deepdark-900"
-                    >
-                        Robo de vehículo y la compañía no responde
-                    </h2>
-                    <p
-                        class="text-[min(10vw,18px)] text-deepdark-900 group-hover:md:text-softWhite-50 text-sm"
-                    >
-                        Gestionamos la reclamación integral, recogemos pruebas y
-                        presentamos demanda si procede.
-                    </p>
-                </a>
-                <a
-                    href="/contacto"
-                    class="md:col-span-2 md:row-span-4 md:col-start-5 md:row-start-1 service-card shadow-xl cursor-pointer shrink-0 py-8 px-6 rounded-2xl border border-deepdark-300 bg-softWhite-50 flex flex-col items-start gap-3 transition duration-400 ease-in-out group hover:md:bg-deepdark-950 hover:md:scale-95 hover:md:outline-2 hover:md:outline-gold-500"
-                >
-                    <span class="sr-only">5</span>
-                    <ConsultaEscoltar
-                        fill={"#202020"}
-                        width={60}
-                        height={60}
-                        class="group-hover:md:fill-gold-400"
-                    />
-
-                    <h2
-                        class="font-bold text-[min(10vw,22px)] group-hover:md:text-gold-400 text-deepdark-900"
-                    >
-                        Consulta / acompañamiento especializado en derecho de
-                        seguros
-                    </h2>
-                    <p
-                        class="text-[min(10vw,18px)] text-deepdark-900 group-hover:md:text-softWhite-50 text-sm"
-                    >
-                        Orientación 1-a-1 sobre trámites, documentos clave y
-                        plazos críticos.
-                    </p>
-                </a>
-                <a
-                    href="/contacto"
-                    class="md:col-span-2 md:row-span-4 md:col-start-5 md:row-start-5 service-card shadow-xl cursor-pointer shrink-0 py-8 px-6 rounded-2xl border border-deepdark-300 bg-softWhite-50 flex flex-col items-start gap-3 transition duration-400 ease-in-out group hover:md:bg-deepdark-950 hover:md:scale-95 hover:md:outline-2 hover:md:outline-gold-500"
-                >
-                    <span class="sr-only">6</span>
-                    <AccidenteTransito
-                        fill={"#202020"}
-                        width={60}
-                        height={60}
-                        class="group-hover:md:fill-gold-400"
-                    />
-
-                    <h2
-                        class="font-bold text-[min(10vw,22px)] group-hover:md:text-gold-400 text-deepdark-900"
-                    >
-                        Accidente de tránsito con póliza de automóvil ajeno
-                    </h2>
-                    <p
-                        class="text-[min(10vw,18px)] text-deepdark-900 group-hover:md:text-softWhite-50 text-sm"
-                    >
-                        Activamos la cobertura de RC del causante y negociamos
-                        tu indemnización total.
-                    </p>
-                </a>
-            </div>
-        </div>
-        <!-- Second section -->
-
-        <div class="mt-8 max-w-7xl mx-auto">
-            <div class="grid grid-cols-1 md:grid-cols-6 md:grid-rows-6 gap-4">
-                <a
-                    href="/contacto"
-                    class="md:col-span-2 md:row-span-3 service-card shadow-xl cursor-pointer shrink-0 py-8 px-6 rounded-2xl border border-deepdark-300 bg-softWhite-50 flex flex-col items-start gap-3 transition duration-400 ease-in-out group hover:md:bg-deepdark-950 hover:md:scale-95 hover:md:outline-2 hover:md:outline-gold-500"
-                >
-                    <span class="sr-only">1</span>
-                    <Electrodomesticos
-                        fill={"#202020"}
-                        width={60}
-                        height={60}
-                        class="group-hover:md:fill-gold-400"
-                    />
-
-                    <h2
-                        class="font-bold text-[min(10vw,22px)] group-hover:md:text-gold-400 text-deepdark-900"
-                    >
-                        Daños en electrodomésticos por sobrecarga y tiene una
-                        póliza de hogar
-                    </h2>
-                    <p
-                        class="text-[min(10vw,18px)] text-deepdark-900 group-hover:md:text-softWhite-50 text-sm"
-                    >
-                        eclamamos reposición o indemnización total por daños
-                        eléctricos.
-                    </p>
-                </a>
-                <a
-                    href="/contacto"
-                    class="md:col-span-2 md:row-span-3 md:col-start-1 md:row-start-4 service-card shadow-xl cursor-pointer shrink-0 py-8 px-6 rounded-2xl border border-deepdark-300 bg-softWhite-50 flex flex-col items-start gap-3 transition duration-400 ease-in-out group hover:md:bg-deepdark-950 hover:md:scale-95 hover:md:outline-2 hover:md:outline-gold-500"
-                >
-                    <span class="sr-only">2</span>
-                    <BancoEjecuta
-                        fill={"#202020"}
-                        width={60}
-                        height={60}
-                        class="group-hover:md:fill-gold-400"
-                    />
-
-                    <h2
-                        class="font-bold text-[min(10vw,22px)] group-hover:md:text-gold-400 text-deepdark-900"
-                    >
-                        Banco ejecuta deuda pese a póliza de vida deudores
-                        (fallecimiento)
-                    </h2>
-                    <p
-                        class="text-[min(10vw,18px)] text-deepdark-900 group-hover:md:text-softWhite-50 text-sm"
-                    >
-                        Hacemos efectiva la póliza y detenemos el cobro,
-                        liberando el patrimonio familiar.
-                    </p>
-                </a>
-                <a
-                    href="/contacto"
-                    class="md:col-span-2 md:row-span-2 md:col-start-3 md:row-start-1 service-card shadow-xl cursor-pointer shrink-0 py-8 px-6 rounded-2xl border border-deepdark-300 bg-softWhite-50 flex flex-col items-start gap-3 transition duration-400 ease-in-out group hover:md:bg-deepdark-950 hover:md:scale-95 hover:md:outline-2 hover:md:outline-gold-500"
-                >
-                    <span class="sr-only">3</span>
-                    <CoberturaInvalidez
-                        fill={"#202020"}
-                        width={60}
-                        height={60}
-                        class="group-hover:md:fill-gold-400"
-                    />
-
-                    <h2
-                        class="font-bold text-[min(10vw,22px)] group-hover:md:text-gold-400 text-deepdark-900"
-                    >
-                        Cobertura por invalidez en póliza vida deudores negada
-                    </h2>
-                    <p
-                        class="text-[min(10vw,18px)] text-deepdark-900 group-hover:md:text-softWhite-50 text-sm"
-                    >
-                        Probamos incapacidad, exigimos condonación de la deuda
-                        más intereses
-                    </p>
-                </a>
-                <a
-                    href="/contacto"
-                    class="md:col-span-2 md:row-span-4 md:col-start-3 md:row-start-3 service-card shadow-xl cursor-pointer shrink-0 py-8 px-6 rounded-2xl border border-deepdark-300 bg-softWhite-50 flex flex-col items-start gap-3 transition duration-400 ease-in-out group hover:md:bg-deepdark-950 hover:md:scale-95 hover:md:outline-2 hover:md:outline-gold-500"
-                >
-                    <span class="sr-only">4</span>
-                    <PolizaCumplimiento
-                        fill={"#202020"}
-                        width={60}
-                        height={60}
-                        class="group-hover:md:fill-gold-400"
-                    />
-
-                    <h2
-                        class="font-bold text-[min(10vw,22px)] group-hover:md:text-gold-400 text-deepdark-900"
-                    >
-                        Necesita hacer efectiva la póliza de cumplimiento de un
-                        contratista
-                    </h2>
-                    <p
-                        class="text-[min(10vw,18px)] text-deepdark-900 group-hover:md:text-softWhite-50 text-sm"
-                    >
-                        Analizamos clausulado, cuantificamos daños y exigimos
-                        indemnización al afianzador.
-                    </p>
-                </a>
-                <a
-                    href="/contacto"
-                    class="md:col-span-2 md:row-span-3 md:col-start-5 md:row-start-4 service-card shadow-xl cursor-pointer shrink-0 py-8 px-6 rounded-2xl border border-deepdark-300 bg-softWhite-50 flex flex-col items-start gap-3 transition duration-400 ease-in-out group hover:md:bg-deepdark-950 hover:md:scale-95 hover:md:outline-2 hover:md:outline-gold-500"
-                >
-                    <span class="sr-only">5</span>
-                    <AseguradoraDilata
-                        fill={"#202020"}
-                        width={60}
-                        height={60}
-                        class="group-hover:md:fill-gold-400"
-                    />
-
-                    <h2
-                        class="font-bold text-[min(10vw,22px)] group-hover:md:text-gold-400 text-deepdark-900"
-                    >
-                        Aseguradora dilata pidiendo documentos innecesarios
-                    </h2>
-                    <p
-                        class="text-[min(10vw,18px)] text-deepdark-900 group-hover:md:text-softWhite-50 text-sm"
-                    >
-                        Impugnamos exigencias, demostramos suficiencia
-                        probatoria y aceleramos el trámite.
-                    </p>
-                </a>
-                <a
-                    href="/contacto"
-                    class="md:col-span-2 md:row-span-3 md:col-start-5 md:row-start-1 service-card shadow-xl cursor-pointer shrink-0 py-8 px-6 rounded-2xl border border-deepdark-300 bg-softWhite-50 flex flex-col items-start gap-3 transition duration-400 ease-in-out group hover:md:bg-deepdark-950 hover:md:scale-95 hover:md:outline-2 hover:md:outline-gold-500"
-                >
-                    <span class="sr-only">6</span>
-                    <NieganAtencionmedica
-                        fill={"#202020"}
-                        width={60}
-                        height={60}
-                        class="group-hover:md:fill-gold-400"
-                    />
-
-                    <h2
-                        class="font-bold text-[min(10vw,22px)] group-hover:md:text-gold-400 text-deepdark-900"
-                    >
-                        Niegan atención médica o tratamientos (póliza salud)
-                    </h2>
-                    <p
-                        class="text-[min(10vw,18px)] text-deepdark-900 group-hover:md:text-softWhite-50 text-sm"
-                    >
-                        Interponemos acciones para autorizar tratamientos o
-                        reembolsos integrales.
-                    </p>
-                </a>
-            </div>
-        </div>
+          <h2
+            class="font-bold text-[min(10vw,22px)] group-hover:md:text-gold-400 text-deepdark-900"
+          >
+            Accidente de tránsito con póliza de automóvil ajeno
+          </h2>
+          <p
+            class="text-[min(10vw,18px)] text-deepdark-900 group-hover:md:text-softWhite-50 text-sm"
+          >
+            Activamos la cobertura de RC del causante y negociamos tu
+            indemnización total.
+          </p>
+        </a>
+      </div>
     </div>
-    <!-- CTA Button -->
-    <CtaBanner
-        title="Queremos conocer su caso"
-        subtitle="Consulte sin costo"
-        ctaText="Agende una llamada"
-    />
+    <!-- Second section -->
+
+    <div class="mt-8 max-w-7xl mx-auto">
+      <div class="grid grid-cols-1 md:grid-cols-6 md:grid-rows-6 gap-4">
+        <a
+          href="/contacto"
+          class="md:col-span-2 md:row-span-3 service-card shadow-xl cursor-pointer shrink-0 py-8 px-6 rounded-2xl border border-deepdark-300 bg-softWhite-50 flex flex-col items-start gap-3 transition duration-400 ease-in-out group hover:md:bg-deepdark-950 hover:md:scale-95 hover:md:outline-2 hover:md:outline-gold-500"
+        >
+          <span class="sr-only">1</span>
+          <Electrodomesticos
+            fill={"#202020"}
+            width={60}
+            height={60}
+            class="group-hover:md:fill-gold-400"
+          />
+
+          <h2
+            class="font-bold text-[min(10vw,22px)] group-hover:md:text-gold-400 text-deepdark-900"
+          >
+            Daños en electrodomésticos por sobrecarga y tiene una póliza de
+            hogar
+          </h2>
+          <p
+            class="text-[min(10vw,18px)] text-deepdark-900 group-hover:md:text-softWhite-50 text-sm"
+          >
+            eclamamos reposición o indemnización total por daños eléctricos.
+          </p>
+        </a>
+        <a
+          href="/contacto"
+          class="md:col-span-2 md:row-span-3 md:col-start-1 md:row-start-4 service-card shadow-xl cursor-pointer shrink-0 py-8 px-6 rounded-2xl border border-deepdark-300 bg-softWhite-50 flex flex-col items-start gap-3 transition duration-400 ease-in-out group hover:md:bg-deepdark-950 hover:md:scale-95 hover:md:outline-2 hover:md:outline-gold-500"
+        >
+          <span class="sr-only">2</span>
+          <BancoEjecuta
+            fill={"#202020"}
+            width={60}
+            height={60}
+            class="group-hover:md:fill-gold-400"
+          />
+
+          <h2
+            class="font-bold text-[min(10vw,22px)] group-hover:md:text-gold-400 text-deepdark-900"
+          >
+            Banco ejecuta deuda pese a póliza de vida deudores (fallecimiento)
+          </h2>
+          <p
+            class="text-[min(10vw,18px)] text-deepdark-900 group-hover:md:text-softWhite-50 text-sm"
+          >
+            Hacemos efectiva la póliza y detenemos el cobro, liberando el
+            patrimonio familiar.
+          </p>
+        </a>
+        <a
+          href="/contacto"
+          class="md:col-span-2 md:row-span-2 md:col-start-3 md:row-start-1 service-card shadow-xl cursor-pointer shrink-0 py-8 px-6 rounded-2xl border border-deepdark-300 bg-softWhite-50 flex flex-col items-start gap-3 transition duration-400 ease-in-out group hover:md:bg-deepdark-950 hover:md:scale-95 hover:md:outline-2 hover:md:outline-gold-500"
+        >
+          <span class="sr-only">3</span>
+          <CoberturaInvalidez
+            fill={"#202020"}
+            width={60}
+            height={60}
+            class="group-hover:md:fill-gold-400"
+          />
+
+          <h2
+            class="font-bold text-[min(10vw,22px)] group-hover:md:text-gold-400 text-deepdark-900"
+          >
+            Cobertura por invalidez en póliza vida deudores negada
+          </h2>
+          <p
+            class="text-[min(10vw,18px)] text-deepdark-900 group-hover:md:text-softWhite-50 text-sm"
+          >
+            Probamos incapacidad, exigimos condonación de la deuda más intereses
+          </p>
+        </a>
+        <a
+          href="/contacto"
+          class="md:col-span-2 md:row-span-4 md:col-start-3 md:row-start-3 service-card shadow-xl cursor-pointer shrink-0 py-8 px-6 rounded-2xl border border-deepdark-300 bg-softWhite-50 flex flex-col items-start gap-3 transition duration-400 ease-in-out group hover:md:bg-deepdark-950 hover:md:scale-95 hover:md:outline-2 hover:md:outline-gold-500"
+        >
+          <span class="sr-only">4</span>
+          <PolizaCumplimiento
+            fill={"#202020"}
+            width={60}
+            height={60}
+            class="group-hover:md:fill-gold-400"
+          />
+
+          <h2
+            class="font-bold text-[min(10vw,22px)] group-hover:md:text-gold-400 text-deepdark-900"
+          >
+            Necesita hacer efectiva la póliza de cumplimiento de un contratista
+          </h2>
+          <p
+            class="text-[min(10vw,18px)] text-deepdark-900 group-hover:md:text-softWhite-50 text-sm"
+          >
+            Analizamos clausulado, cuantificamos daños y exigimos indemnización
+            al afianzador.
+          </p>
+        </a>
+        <a
+          href="/contacto"
+          class="md:col-span-2 md:row-span-3 md:col-start-5 md:row-start-4 service-card shadow-xl cursor-pointer shrink-0 py-8 px-6 rounded-2xl border border-deepdark-300 bg-softWhite-50 flex flex-col items-start gap-3 transition duration-400 ease-in-out group hover:md:bg-deepdark-950 hover:md:scale-95 hover:md:outline-2 hover:md:outline-gold-500"
+        >
+          <span class="sr-only">5</span>
+          <AseguradoraDilata
+            fill={"#202020"}
+            width={60}
+            height={60}
+            class="group-hover:md:fill-gold-400"
+          />
+
+          <h2
+            class="font-bold text-[min(10vw,22px)] group-hover:md:text-gold-400 text-deepdark-900"
+          >
+            Aseguradora dilata pidiendo documentos innecesarios
+          </h2>
+          <p
+            class="text-[min(10vw,18px)] text-deepdark-900 group-hover:md:text-softWhite-50 text-sm"
+          >
+            Impugnamos exigencias, demostramos suficiencia probatoria y
+            aceleramos el trámite.
+          </p>
+        </a>
+        <a
+          href="/contacto"
+          class="md:col-span-2 md:row-span-3 md:col-start-5 md:row-start-1 service-card shadow-xl cursor-pointer shrink-0 py-8 px-6 rounded-2xl border border-deepdark-300 bg-softWhite-50 flex flex-col items-start gap-3 transition duration-400 ease-in-out group hover:md:bg-deepdark-950 hover:md:scale-95 hover:md:outline-2 hover:md:outline-gold-500"
+        >
+          <span class="sr-only">6</span>
+          <NieganAtencionmedica
+            fill={"#202020"}
+            width={60}
+            height={60}
+            class="group-hover:md:fill-gold-400"
+          />
+
+          <h2
+            class="font-bold text-[min(10vw,22px)] group-hover:md:text-gold-400 text-deepdark-900"
+          >
+            Niegan atención médica o tratamientos (póliza salud)
+          </h2>
+          <p
+            class="text-[min(10vw,18px)] text-deepdark-900 group-hover:md:text-softWhite-50 text-sm"
+          >
+            Interponemos acciones para autorizar tratamientos o reembolsos
+            integrales.
+          </p>
+        </a>
+      </div>
+    </div>
+  </div>
+  <!-- CTA Button -->
+  <CtaBanner
+    title="Queremos conocer su caso"
+    subtitle="Consulte sin costo"
+    ctaText="Agende una llamada"
+    href="/contacto"
+  />
 </section>

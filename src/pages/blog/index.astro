@@ -7,7 +7,7 @@ import CtaBanner from "@/components/global/CtaBanner.astro";
 const posts = await getCollection("blog");
 
 const sortedPosts = posts.sort(
-  (a, b) => b.data.publishDate?.valueOf() - a.data.publishDate?.valueOf(),
+  (a, b) => b.data.publishDate?.valueOf() - a.data.publishDate?.valueOf()
 );
 ---
 
@@ -28,5 +28,6 @@ const sortedPosts = posts.sort(
     title="¿Queremos conocer su caso?"
     subtitle="Agende una llamada"
     ctaText="Consulte sin costo"
+    href="/contacto"
   />
 </MainLayout>

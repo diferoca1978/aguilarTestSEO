@@ -9,188 +9,184 @@ import CtaBanner from "@/components/global/CtaBanner.astro";
 ---
 
 <section class="w-full mx-auto pt-12">
-    <div class="flex flex-col items-center px-4 sm:px-5 lg:px-10">
-        <!-- Title -->
-        <h1
-            class="text-[min(10vw,52px)] font-bold text-deepdark-900 leading-tight tracking-tight text-center"
+  <div class="flex flex-col items-center px-4 sm:px-5 lg:px-10">
+    <!-- Title -->
+    <h1
+      class="text-[min(10vw,52px)] font-bold text-deepdark-900 leading-tight tracking-tight text-center"
+    >
+      Servicios para empresas
+    </h1>
+
+    <p
+      class="prose max-w-3xl mx-auto text-[min(10vw,18px)] text-deepdark-900 text-center mt-4"
+    >
+      Aquí encontrará soluciones claras, acompañamiento experto y un equipo
+      dispuesto a defender sus derechos en cada paso. Explore a continuación
+      diferentes situaciones a las que se puede enfrentar y descubra cómo
+      podemos convertir su preocupación en tranquilidad legal.
+    </p>
+
+    <!-- First section -->
+
+    <div class="mt-12 max-w-7xl mx-auto">
+      <!-- Cards -->
+
+      <div
+        class="grid grid-cols-1 auto-rows-auto md:grid-cols-6 md:grid-rows-8 gap-2"
+      >
+        <a
+          href="/contacto"
+          class="md:col-span-2 md:row-span-4 service-card shadow-xl cursor-pointer shrink-0 py-8 px-6 rounded-2xl border border-deepdark-300 bg-softWhite-50 flex flex-col items-start gap-3 transition duration-400 ease-in-out group hover:md:bg-deepdark-950 hover:md:scale-95 hover:md:outline-2 hover:md:outline-gold-500"
         >
-            Servicios para empresas
-        </h1>
+          <span class="sr-only">1</span>
 
-        <p
-            class="prose max-w-3xl mx-auto text-[min(10vw,18px)] text-deepdark-900 text-center mt-4"
+          <CapacitacionesCorporativas
+            fill={"#202020"}
+            width={60}
+            height={60}
+            class="group-hover:md:fill-gold-400"
+          />
+
+          <h2
+            class="font-bold text-[min(10vw,22px)] group-hover:md:text-gold-400 text-deepdark-900"
+          >
+            Capacitaciones corporativas en materia de seguros
+          </h2>
+          <p
+            class="text-[min(10vw,18px)] text-deepdark-900 group-hover:md:text-softWhite-50 text-sm"
+          >
+            Diseñamos talleres in-house (2–4 h) adaptados a los ramos que
+            manejas, con casos prácticos y últimas sentencias.
+          </p>
+        </a>
+        <a
+          href="/contacto"
+          class="md:col-span-2 md:row-span-4 md:col-start-1 md:row-start-5 service-card shadow-xl cursor-pointer shrink-0 py-8 px-6 rounded-2xl border border-deepdark-300 bg-softWhite-50 flex flex-col items-start gap-3 transition duration-400 ease-in-out group hover:md:bg-deepdark-950 hover:md:scale-95 hover:md:outline-2 hover:md:outline-gold-500"
         >
-            Aquí encontrará soluciones claras, acompañamiento experto y un
-            equipo dispuesto a defender sus derechos en cada paso. Explore a
-            continuación diferentes situaciones a las que se puede enfrentar y
-            descubra cómo podemos convertir su preocupación en tranquilidad
-            legal.
-        </p>
+          <span class="sr-only">2</span>
+          <AsesoriaExterna
+            fill={"#202020"}
+            width={60}
+            height={60}
+            class="group-hover:md:fill-gold-400"
+          />
 
-        <!-- First section -->
+          <h2
+            class="font-bold text-[min(10vw,22px)] group-hover:md:text-gold-400 text-deepdark-900"
+          >
+            Asesoría externa especializada (outsourcing legal)
+          </h2>
+          <p
+            class="text-[min(10vw,18px)] text-deepdark-900 group-hover:md:text-softWhite-50 text-sm"
+          >
+            Actuamos como suárea jurídica on-demand: emitimos conceptos,
+            redactamos cláusulas, respondemos siniestros y tutelas.
+          </p>
+        </a>
+        <a
+          href="/contacto"
+          class="md:col-span-2 md:row-span-5 md:col-start-3 md:row-start-1 service-card shadow-xl cursor-pointer shrink-0 py-8 px-6 rounded-2xl border border-deepdark-300 bg-softWhite-50 flex flex-col items-start gap-3 transition duration-400 ease-in-out group hover:md:bg-deepdark-950 hover:md:scale-95 hover:md:outline-2 hover:md:outline-gold-500"
+        >
+          <span class="sr-only">3</span>
+          <RepresentacionJudicialExtrajudicial
+            fill={"#202020"}
+            width={60}
+            height={60}
+            class="group-hover:md:fill-gold-400"
+          />
 
-        <div class="mt-12 max-w-7xl mx-auto">
-            <!-- Cards -->
+          <h2
+            class="font-bold text-[min(10vw,22px)] group-hover:md:text-gold-400 text-deepdark-900"
+          >
+            Representación judicial y extrajudicial
+          </h2>
+          <p
+            class="text-[min(10vw,18px)] text-deepdark-900 group-hover:md:text-softWhite-50 text-sm"
+          >
+            Defendemos a su empresa y directivos ante la Superfinanciera,
+            juzgados o tribunales; elaboramos estrategia probatoria completa
+          </p>
+        </a>
+        <a
+          href="/contacto"
+          class="md:col-span-2 md:row-span-3 md:col-start-3 md:row-start-6 service-card shadow-xl cursor-pointer shrink-0 py-8 px-6 rounded-2xl border border-deepdark-300 bg-softWhite-50 flex flex-col items-start gap-3 transition duration-400 ease-in-out group hover:md:bg-deepdark-950 hover:md:scale-95 hover:md:outline-2 hover:md:outline-gold-500"
+        >
+          <span class="sr-only">4</span>
+          <EscoltarJuridico
+            fill={"#202020"}
+            width={60}
+            height={60}
+            class="group-hover:md:fill-gold-400"
+          />
 
-            <div
-                class="grid grid-cols-1 auto-rows-auto md:grid-cols-6 md:grid-rows-8 gap-2"
-            >
-                <a
-                    href="/contacto"
-                    class="md:col-span-2 md:row-span-4 service-card shadow-xl cursor-pointer shrink-0 py-8 px-6 rounded-2xl border border-deepdark-300 bg-softWhite-50 flex flex-col items-start gap-3 transition duration-400 ease-in-out group hover:md:bg-deepdark-950 hover:md:scale-95 hover:md:outline-2 hover:md:outline-gold-500"
-                >
-                    <span class="sr-only">1</span>
+          <h2
+            class="font-bold text-[min(10vw,22px)] group-hover:md:text-gold-400 text-deepdark-900"
+          >
+            Acompañamiento jurídico preventivo
+          </h2>
+          <p
+            class="text-[min(10vw,18px)] text-deepdark-900 group-hover:md:text-softWhite-50 text-sm"
+          >
+            Auditoría semestral de pólizas, alertas tempranas de riesgos y
+            matriz de cumplimiento.
+          </p>
+        </a>
+        <a
+          href="/contacto"
+          class="md:col-span-2 md:row-span-4 md:col-start-5 md:row-start-1 service-card shadow-xl cursor-pointer shrink-0 py-8 px-6 rounded-2xl border border-deepdark-300 bg-softWhite-50 flex flex-col items-start gap-3 transition duration-400 ease-in-out group hover:md:bg-deepdark-950 hover:md:scale-95 hover:md:outline-2 hover:md:outline-gold-500"
+        >
+          <span class="sr-only">5</span>
+          <EstudioClausulado
+            fill={"#202020"}
+            width={60}
+            height={60}
+            class="group-hover:md:fill-gold-400"
+          />
 
-                    <CapacitacionesCorporativas
-                        fill={"#202020"}
-                        width={60}
-                        height={60}
-                        class="group-hover:md:fill-gold-400"
-                    />
+          <h2
+            class="font-bold text-[min(10vw,22px)] group-hover:md:text-gold-400 text-deepdark-900"
+          >
+            Estudio del clausulado y condiciones de pólizas
+          </h2>
+          <p
+            class="text-[min(10vw,18px)] text-deepdark-900 group-hover:md:text-softWhite-50 text-sm"
+          >
+            Informe comparativo: exclusiones, sublímites y recomendaciones de
+            mejora para optimizar coberturas.
+          </p>
+        </a>
+        <a
+          href="/contacto"
+          class="md:col-span-2 md:row-span-4 md:col-start-5 md:row-start-5 service-card shadow-xl cursor-pointer shrink-0 py-8 px-6 rounded-2xl border border-deepdark-300 bg-softWhite-50 flex flex-col items-start gap-3 transition duration-400 ease-in-out group hover:md:bg-deepdark-950 hover:md:scale-95 hover:md:outline-2 hover:md:outline-gold-500"
+        >
+          <span class="sr-only">6</span>
+          <HacerEfectiva
+            fill={"#202020"}
+            width={60}
+            height={60}
+            class="group-hover:md:fill-gold-400"
+          />
 
-                    <h2
-                        class="font-bold text-[min(10vw,22px)] group-hover:md:text-gold-400 text-deepdark-900"
-                    >
-                        Capacitaciones corporativas en materia de seguros
-                    </h2>
-                    <p
-                        class="text-[min(10vw,18px)] text-deepdark-900 group-hover:md:text-softWhite-50 text-sm"
-                    >
-                        Diseñamos talleres in-house (2–4 h) adaptados a los
-                        ramos que manejas, con casos prácticos y últimas
-                        sentencias.
-                    </p>
-                </a>
-                <a
-                    href="/contacto"
-                    class="md:col-span-2 md:row-span-4 md:col-start-1 md:row-start-5 service-card shadow-xl cursor-pointer shrink-0 py-8 px-6 rounded-2xl border border-deepdark-300 bg-softWhite-50 flex flex-col items-start gap-3 transition duration-400 ease-in-out group hover:md:bg-deepdark-950 hover:md:scale-95 hover:md:outline-2 hover:md:outline-gold-500"
-                >
-                    <span class="sr-only">2</span>
-                    <AsesoriaExterna
-                        fill={"#202020"}
-                        width={60}
-                        height={60}
-                        class="group-hover:md:fill-gold-400"
-                    />
-
-                    <h2
-                        class="font-bold text-[min(10vw,22px)] group-hover:md:text-gold-400 text-deepdark-900"
-                    >
-                        Asesoría externa especializada (outsourcing legal)
-                    </h2>
-                    <p
-                        class="text-[min(10vw,18px)] text-deepdark-900 group-hover:md:text-softWhite-50 text-sm"
-                    >
-                        Actuamos como suárea jurídica on-demand: emitimos
-                        conceptos, redactamos cláusulas, respondemos siniestros
-                        y tutelas.
-                    </p>
-                </a>
-                <a
-                    href="/contacto"
-                    class="md:col-span-2 md:row-span-5 md:col-start-3 md:row-start-1 service-card shadow-xl cursor-pointer shrink-0 py-8 px-6 rounded-2xl border border-deepdark-300 bg-softWhite-50 flex flex-col items-start gap-3 transition duration-400 ease-in-out group hover:md:bg-deepdark-950 hover:md:scale-95 hover:md:outline-2 hover:md:outline-gold-500"
-                >
-                    <span class="sr-only">3</span>
-                    <RepresentacionJudicialExtrajudicial
-                        fill={"#202020"}
-                        width={60}
-                        height={60}
-                        class="group-hover:md:fill-gold-400"
-                    />
-
-                    <h2
-                        class="font-bold text-[min(10vw,22px)] group-hover:md:text-gold-400 text-deepdark-900"
-                    >
-                        Representación judicial y extrajudicial
-                    </h2>
-                    <p
-                        class="text-[min(10vw,18px)] text-deepdark-900 group-hover:md:text-softWhite-50 text-sm"
-                    >
-                        Defendemos a su empresa y directivos ante la
-                        Superfinanciera, juzgados o tribunales; elaboramos
-                        estrategia probatoria completa
-                    </p>
-                </a>
-                <a
-                    href="/contacto"
-                    class="md:col-span-2 md:row-span-3 md:col-start-3 md:row-start-6 service-card shadow-xl cursor-pointer shrink-0 py-8 px-6 rounded-2xl border border-deepdark-300 bg-softWhite-50 flex flex-col items-start gap-3 transition duration-400 ease-in-out group hover:md:bg-deepdark-950 hover:md:scale-95 hover:md:outline-2 hover:md:outline-gold-500"
-                >
-                    <span class="sr-only">4</span>
-                    <EscoltarJuridico
-                        fill={"#202020"}
-                        width={60}
-                        height={60}
-                        class="group-hover:md:fill-gold-400"
-                    />
-
-                    <h2
-                        class="font-bold text-[min(10vw,22px)] group-hover:md:text-gold-400 text-deepdark-900"
-                    >
-                        Acompañamiento jurídico preventivo
-                    </h2>
-                    <p
-                        class="text-[min(10vw,18px)] text-deepdark-900 group-hover:md:text-softWhite-50 text-sm"
-                    >
-                        Auditoría semestral de pólizas, alertas tempranas de
-                        riesgos y matriz de cumplimiento.
-                    </p>
-                </a>
-                <a
-                    href="/contacto"
-                    class="md:col-span-2 md:row-span-4 md:col-start-5 md:row-start-1 service-card shadow-xl cursor-pointer shrink-0 py-8 px-6 rounded-2xl border border-deepdark-300 bg-softWhite-50 flex flex-col items-start gap-3 transition duration-400 ease-in-out group hover:md:bg-deepdark-950 hover:md:scale-95 hover:md:outline-2 hover:md:outline-gold-500"
-                >
-                    <span class="sr-only">5</span>
-                    <EstudioClausulado
-                        fill={"#202020"}
-                        width={60}
-                        height={60}
-                        class="group-hover:md:fill-gold-400"
-                    />
-
-                    <h2
-                        class="font-bold text-[min(10vw,22px)] group-hover:md:text-gold-400 text-deepdark-900"
-                    >
-                        Estudio del clausulado y condiciones de pólizas
-                    </h2>
-                    <p
-                        class="text-[min(10vw,18px)] text-deepdark-900 group-hover:md:text-softWhite-50 text-sm"
-                    >
-                        Informe comparativo: exclusiones, sublímites y
-                        recomendaciones de mejora para optimizar coberturas.
-                    </p>
-                </a>
-                <a
-                    href="/contacto"
-                    class="md:col-span-2 md:row-span-4 md:col-start-5 md:row-start-5 service-card shadow-xl cursor-pointer shrink-0 py-8 px-6 rounded-2xl border border-deepdark-300 bg-softWhite-50 flex flex-col items-start gap-3 transition duration-400 ease-in-out group hover:md:bg-deepdark-950 hover:md:scale-95 hover:md:outline-2 hover:md:outline-gold-500"
-                >
-                    <span class="sr-only">6</span>
-                    <HacerEfectiva
-                        fill={"#202020"}
-                        width={60}
-                        height={60}
-                        class="group-hover:md:fill-gold-400"
-                    />
-
-                    <h2
-                        class="font-bold text-[min(10vw,22px)] group-hover:md:text-gold-400 text-deepdark-900"
-                    >
-                        Hacer efectiva una póliza de cumplimiento
-                        (contratistas/proveedores)
-                    </h2>
-                    <p
-                        class="text-[min(10vw,18px)] text-deepdark-900 group-hover:md:text-softWhite-50 text-sm"
-                    >
-                        Reclamamos indemnización total, gestionamos pruebas de
-                        incumplimiento y demandamos si es necesario.
-                    </p>
-                </a>
-            </div>
-        </div>
+          <h2
+            class="font-bold text-[min(10vw,22px)] group-hover:md:text-gold-400 text-deepdark-900"
+          >
+            Hacer efectiva una póliza de cumplimiento (contratistas/proveedores)
+          </h2>
+          <p
+            class="text-[min(10vw,18px)] text-deepdark-900 group-hover:md:text-softWhite-50 text-sm"
+          >
+            Reclamamos indemnización total, gestionamos pruebas de
+            incumplimiento y demandamos si es necesario.
+          </p>
+        </a>
+      </div>
     </div>
-    <!-- CTA Button -->
-    <CtaBanner
-        title="Queremos conocer su caso"
-        subtitle="Consulte sin costo"
-        ctaText="Agende una llamada"
-    />
+  </div>
+  <!-- CTA Button -->
+  <CtaBanner
+    title="Queremos conocer su caso"
+    subtitle="Consulte sin costo"
+    ctaText="Agende una llamada"
+    href="/contacto"
+  />
 </section>
