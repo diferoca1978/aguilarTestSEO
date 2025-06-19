@@ -1,0 +1,314 @@
+---
+import LogoSvg from "@/assets/images/logoblackletters.svg";
+import MobileMenuSvg from "@/assets/images/mobilemenu.svg";
+import MobileMenuCloseSvg from "@/assets/images/mobilemenuclose.svg";
+
+// Captura la ruta actual en SSR y elimina slash final si aplica
+const currentPathRaw = Astro.url.pathname;
+const currentPath =
+  currentPathRaw !== "/" && currentPathRaw.endsWith("/")
+    ? currentPathRaw.slice(0, -1)
+    : currentPathRaw;
+
+// Enlaces de navegación principales (sin 'Servicios')
+type Link = { url: string; label: string };
+const links: Link[] = [
+  { url: "/quienesSomos", label: "¿Quiénes Somos?" },
+  { url: "/casosDeExito", label: "Casos de Éxito" },
+  { url: "/blog", label: "Blog" },
+  { url: "/contacto", label: "Contacto" },
+];
+
+// Sub-enlaces de 'Servicios'
+const serviciosLinks: Link[] = [
+  { url: "/serviciosPersonas", label: "Personas" },
+  { url: "/serviciosEmpresas", label: "Empresas" },
+];
+---
+
+<header
+  class="fixed top-0 left-0 right-0 bg-softWhite-50 z-50 w-full shadow-lg main-header"
+>
+  <nav
+    class="w-full mx-auto md:max-w-7xl nav-bar px-5 py-4 flex items-center justify-between"
+  >
+    <!-- Logo -->
+    <a href="/" class="flex items-center">
+      <LogoSvg width={250} height={130} class="logo" />
+      <span class="sr-only">Logo</span>
+    </a>
+
+    <!-- Mobile toggle -->
+    <button
+      type="button"
+      class="md:hidden p-2 open-mobile-menu focus:outline-none"
+    >
+      <span class="sr-only">Toggle menu</span>
+      <MobileMenuSvg id="open-icon" width={32} height={32} />
+      <MobileMenuCloseSvg
+        id="close-icon"
+        width={28}
+        height={28}
+        class="hidden"
+      />
+    </button>
+
+    <!-- Desktop links -->
+    <div class="hidden md:flex space-x-6 items-center">
+      {
+        links
+          .filter((l) => l.url !== "/contacto")
+          .map((link) => (
+            <a
+              href={link.url}
+              aria-current={currentPath === link.url ? "page" : undefined}
+              class="font-semibold nav-link"
+              class:list={{
+                "text-gold-500": currentPath === link.url,
+                "text-deepdark-900": currentPath !== link.url,
+              }}
+            >
+              {link.label}
+            </a>
+          ))
+      }
+
+      <!-- Dropdown 'Servicios' entre Blog y Contacto -->
+      <div class="relative">
+        <a
+          href="#"
+          id="servicios-toggle"
+          class="flex items-center font-semibold nav-link cursor-pointer"
+          class:list={{
+            "text-gold-500": currentPath.startsWith("/servicios"),
+            "text-deepdark-900": !currentPath.startsWith("/servicios"),
+          }}
+        >
+          Servicios
+          <svg
+            class="w-4 h-4 ml-1"
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M19 9l-7 7-7-7"></path>
+          </svg>
+        </a>
+        <div
+          id="servicios-dropdown"
+          class="absolute left-0 top-full mt-2 w-48 bg-softWhite-50 z-10 rounded-xl shadow-lg hidden"
+        >
+          {
+            serviciosLinks.map((s) => (
+              <a
+                href={s.url}
+                class="block px-4 py-2 rounded-xl nav-link"
+                class:list={{
+                  "text-gold-500 dark:text-gold-300": currentPath === s.url,
+                  "text-deepdark-900": currentPath !== s.url,
+                }}
+              >
+                {s.label}
+              </a>
+            ))
+          }
+        </div>
+      </div>
+
+      <!-- Finalmente 'Contacto' -->
+      <a
+        href="/contacto"
+        aria-current={currentPath === "/contacto" ? "page" : undefined}
+        class="font-semibold nav-link"
+        class:list={{
+          "text-softWhite-50 px-6 py-2 bg-gold-400 rounded-xl hover:bg-gold-500 transition duration-300 ":
+            currentPath === "/contacto",
+          "text-softWhite-50 px-6 py-2 bg-gold-400 rounded-xl hover:bg-gold-500 transition duration-300":
+            currentPath !== "/contacto",
+        }}>Contacto</a
+      >
+    </div>
+
+    <!-- Mobile menu -->
+    <div class="mobile-menu md:hidden absolute top-[162px] right-0 z-50">
+      <div class="bg-deepdark-900 text-right rounded-b-lg shadow-lg p-4 py-6">
+        {/** Mapear todos menos 'Contacto' **/}
+        {
+          links
+            .filter((l) => l.url !== "/contacto")
+            .map((link) => (
+              <a
+                href={link.url}
+                class="block text-deepdark-900 font-semibold nav-link my-2"
+                class:list={{
+                  "text-gold-500": currentPath === link.url,
+                  "text-softWhite-300": currentPath !== link.url,
+                }}
+              >
+                {link.label}
+              </a>
+            ))
+        }
+
+        <!-- Dropdown 'Servicios' mobile -->
+        <div class="flex flex-col items-end my-2">
+          <a
+            href="#"
+            id="mobile-servicios-toggle"
+            class="flex items-center font-semibold nav-link cursor-pointer"
+            class:list={{
+              "text-gold-500": currentPath.startsWith("/servicios"),
+              "text-softWhite-300": !currentPath.startsWith("/servicios"),
+            }}
+          >
+            Servicios
+            <svg
+              class="w-4 h-4 ml-1"
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M19 9l-7 7-7-7"></path>
+            </svg>
+          </a>
+          <div
+            id="mobile-servicios-dropdown"
+            class="ml-4 mt-2 space-y-2 hidden"
+          >
+            {
+              serviciosLinks.map((s) => (
+                <a
+                  href={s.url}
+                  class="block text-deepdark-950 font-semibold nav-link"
+                  class:list={{
+                    "text-gold-500": currentPath === s.url,
+                    "text-softWhite-300": currentPath !== s.url,
+                  }}
+                >
+                  {s.label}
+                </a>
+              ))
+            }
+          </div>
+        </div>
+      </div>
+
+      <!-- Finalmente 'Contacto' mobile -->
+      <a
+        href="/contacto"
+        class="block text-deepdark-900 font-semibold nav-link my-2"
+        class:list={{
+          "text-gold-500": currentPath === "/contacto",
+          "text-deepdark-900": currentPath !== "/contacto",
+        }}>Contacto</a
+      >
+    </div>
+  </nav>
+
+  <style>
+    .mobile-menu {
+      max-height: 0;
+      overflow: hidden;
+      width: 0;
+      transition:
+        max-height 0.5s ease-out,
+        width 0.5s ease-out;
+    }
+    .mobile-menu.open {
+      max-height: 1000px;
+      width: 100%;
+      transition:
+        max-height 0.8s ease-in,
+        width 0.5s ease-in;
+    }
+  </style>
+
+  <script>
+    // Mobile menu toggle
+    function setupMobileMenu() {
+      const btn = document.querySelector("button.open-mobile-menu");
+      const menu = document.querySelector(".mobile-menu");
+      const openIcon = document.querySelector("#open-icon");
+      const closeIcon = document.querySelector("#close-icon");
+      if (btn && menu && openIcon && closeIcon) {
+        btn.addEventListener("click", () => {
+          menu.classList.toggle("open");
+          openIcon.classList.toggle("hidden");
+          closeIcon.classList.toggle("hidden");
+        });
+      }
+    }
+    document.addEventListener("DOMContentLoaded", setupMobileMenu);
+    document.addEventListener("astro:page-load", setupMobileMenu);
+
+    // Servicios desktop dropdown
+    const serviciosToggle = document.querySelector("#servicios-toggle");
+    const serviciosDropdown = document.querySelector("#servicios-dropdown");
+    if (serviciosToggle && serviciosDropdown) {
+      serviciosToggle.addEventListener("click", (e) => {
+        e.preventDefault();
+        serviciosDropdown.classList.toggle("hidden");
+      });
+      serviciosDropdown.addEventListener("mouseleave", () => {
+        serviciosDropdown.classList.add("hidden");
+      });
+    }
+
+    // Servicios mobile dropdown
+    const mobileServiciosToggle = document.querySelector(
+      "#mobile-servicios-toggle"
+    );
+    const mobileServiciosDropdown = document.querySelector(
+      "#mobile-servicios-dropdown"
+    );
+    if (mobileServiciosToggle && mobileServiciosDropdown) {
+      mobileServiciosToggle.addEventListener("click", (e) => {
+        e.preventDefault();
+        mobileServiciosDropdown.classList.toggle("hidden");
+      });
+    }
+  </script>
+</header>
+<script>
+  function setupMobileMenu() {
+    const btn = document.querySelector("button.open-mobile-menu");
+    const menu = document.querySelector(".mobile-menu");
+    const openIcon = document.querySelector("#open-icon");
+    const closeIcon = document.querySelector("#close-icon");
+    if (btn && menu && openIcon && closeIcon) {
+      btn.addEventListener("click", () => {
+        menu.classList.toggle("open");
+        openIcon.classList.toggle("hidden");
+        closeIcon.classList.toggle("hidden");
+      });
+    }
+  }
+  document.addEventListener("DOMContentLoaded", setupMobileMenu);
+  document.addEventListener("astro:page-load", setupMobileMenu);
+</script><script>
+  function setupMobileMenu() {
+    const btn = document.querySelector("button.open-mobile-menu");
+    const menu = document.querySelector(".mobile-menu");
+    const openIcon = document.querySelector("#open-icon");
+    const closeIcon = document.querySelector("#close-icon");
+    if (btn && menu && openIcon && closeIcon) {
+      btn.addEventListener("click", () => {
+        menu.classList.toggle("open");
+        openIcon.classList.toggle("hidden");
+        closeIcon.classList.toggle("hidden");
+      });
+    }
+  }
+  document.addEventListener("DOMContentLoaded", setupMobileMenu);
+  document.addEventListener("astro:page-load", setupMobileMenu);
+</script>

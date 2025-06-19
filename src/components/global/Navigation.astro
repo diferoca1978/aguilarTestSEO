@@ -184,27 +184,6 @@ const currentPath = Astro.url.pathname;
 </style>
 
 <script>
-  const currentPath = window.location.pathname;
-
-  function highlightActiveLink() {
-    const links = document.querySelectorAll(".nav-link");
-    links.forEach((link) => {
-      const href = link.getAttribute("href");
-      if (href === currentPath) {
-        link.classList.add("text-gold-500");
-      } else {
-        link.classList.remove("text-gold-500");
-      }
-    });
-  }
-
-  // Run after DOM is loaded
-  document.addEventListener("DOMContentLoaded", highlightActiveLink);
-  // Also run on dynamic navigation if needed
-  document.addEventListener("astro:page-load", highlightActiveLink);
-</script>
-
-<script>
   // Mobile menu toggle
   const btn = document.querySelector(
     "button.open-mobile-menu"
