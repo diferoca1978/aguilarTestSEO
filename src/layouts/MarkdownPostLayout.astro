@@ -3,6 +3,7 @@ import "../styles/global.css";
 import Navigation from "../components/global/Navigation.astro";
 import Footer from "@/components/global/Footer.astro";
 import { ORGANIZATION_SCHEMA, WEBSITE_SCHEMA } from "@/config/seoConfig";
+import NavigationAlt from "@/components/global/NavigationAlt.astro";
 interface Props {
   title: string;
 }
@@ -48,7 +49,7 @@ const { title } = Astro.props;
     <slot name="head" />
   </head>
   <body>
-    <Navigation />
+    <NavigationAlt />
     <main class="md:pt-[130px]">
         <div class="relative">
             <div class="absolute inset-0 bg-gradient-to-br from-quill-gray-50 via-quill-gray-100 to-quill-gray-200"></div>
