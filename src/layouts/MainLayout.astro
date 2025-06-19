@@ -3,6 +3,7 @@ import "../styles/global.css";
 import Navigation from "../components/global/Navigation.astro";
 import Footer from "@/components/global/Footer.astro";
 import { ORGANIZATION_SCHEMA, WEBSITE_SCHEMA } from "@/config/seoConfig";
+import WhatsApp from "@/components/global/WhatsApp.astro";
 interface Props {
   title: string;
 }
@@ -60,6 +61,9 @@ const { title } = Astro.props;
       <slot />
     </main>
     <Footer />
+    <div class="fixed bottom-20 right-30 z-50">
+      <WhatsApp />
+    </div>
   </body>
 </html>
 
